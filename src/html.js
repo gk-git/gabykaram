@@ -12,6 +12,19 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QQP7EWQ8G"/>
+        <script dangerouslySetInnerHTML={{
+          __html:`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+    
+          gtag('config', 'G-9QQP7EWQ8G');
+          `
+        }}>
+        
+        </script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
