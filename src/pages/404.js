@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import Layout from "../components/Global/Layout"
 import Intro from "../components/Global/Intro"
 import { Link } from "gatsby"
