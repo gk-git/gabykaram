@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react"
 const defaultState = {
   theme: {
     dark: false,
-    toggleDark: () => {}
+    toggleDark: () => {},
   },
   navigation: {
     isOpen: false,
-    toggleMenu: () => {}
-  }
+    toggleMenu: () => {},
+  },
 }
 const AppContext = React.createContext(defaultState)
 // Getting dark mode information from OS!
@@ -19,36 +19,40 @@ const supportsDarkMode = () =>
 const AppProvider = ({ children }) => {
   const [state, setState] = useState({
     theme: {
-      dark: false
+      dark: false,
     },
     navigation: {
-      isOpen: false
+      isOpen: false,
     },
-    adjustedScreenBefore: false
+    adjustedScreenBefore: false,
   })
-  
+
   useEffect(() => {
     const lsDark = JSON.parse(localStorage.getItem("dark"))
     if (lsDark) {
-      setState({
-        ...state,
-        theme: {
-          ...state.theme,
-          dark: lsDark
+      setState(state => {
+        return {
+          ...state,
+          theme: {
+            ...state.theme,
+            dark: lsDark,
+          },
         }
       })
     } else if (supportsDarkMode()) {
-      setState({
-        ...state,
-        theme: {
-          ...state.theme,
-          dark: true
+      setState(state => {
+        return {
+          ...state,
+          theme: {
+            ...state.theme,
+            dark: true,
+          },
         }
       })
     }
   }, [])
   const { theme, navigation } = state
-  
+
   const toggleDark = () => {
     let dark = !state.theme.dark
     localStorage.setItem("dark", JSON.stringify(dark))
@@ -56,36 +60,37 @@ const AppProvider = ({ children }) => {
       ...state,
       theme: {
         ...state.theme,
-        dark
-      }
+        dark,
+      },
     })
   }
   const toggleMenu = () => {
     let isOpen = !state.navigation.isOpen
     if (isOpen) {
-      document?.querySelector('html')?.classList.add('noScroll')
-    }else {
-      document?.querySelector('html')?.classList?.remove('noScroll')
+      document?.querySelector("html")?.classList.add("noScroll")
+    } else {
+      document?.querySelector("html")?.classList?.remove("noScroll")
     }
     setState({
-      ...state, navigation: {
+      ...state,
+      navigation: {
         ...state.navigation,
-        isOpen: isOpen
-      }
+        isOpen: isOpen,
+      },
     })
   }
-  
+
   return (
     <AppContext.Provider
       value={{
         theme: {
           ...theme,
-          toggleDark: toggleDark
+          toggleDark: toggleDark,
         },
         navigation: {
           ...navigation,
-          toggleMenu: toggleMenu
-        }
+          toggleMenu: toggleMenu,
+        },
       }}
     >
       {children}
