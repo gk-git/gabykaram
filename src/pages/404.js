@@ -4,7 +4,7 @@ import Layout from "../components/Global/Layout"
 import Intro from "../components/Global/Intro"
 import { Link } from "gatsby"
 
-const PageNotFound = () => {
+export default function PageNotFound() {
   return (
     <Layout
       navigationProps={{
@@ -31,4 +31,3 @@ const PageNotFound = () => {
     </Layout>
   )
 }
-export default PageNotFound

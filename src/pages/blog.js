@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Global/Layout"
 
-const BlogPage = () => {
+export default function BlogPage()  {
   return (
     <Layout>
       <div style={{display:'flex', alignItems:'center', height: '100%'}}>
@@ -14,5 +14,3 @@ const BlogPage = () => {
     </Layout>
   )
 }
-
-export default BlogPage;

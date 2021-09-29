@@ -19,7 +19,7 @@ const labLinks = [
     href: "https://github.com/gk-git/javascript-basics/tree/master/Base6"
   },
 ]
-const LabPage = () => {
+export default function LabPage() {
   return (
     <Layout>
       <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
@@ -49,5 +49,3 @@ const LabPage = () => {
     </Layout>
   )
 }
-
-export default LabPage

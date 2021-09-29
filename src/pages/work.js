@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Global/Layout"
 
-const WorkPage = () => {
+export default function WorkPage() {
   return (
     <Layout>
       <div style={{display:'flex', alignItems:'center', height: '100%'}}>
@@ -12,5 +12,3 @@ const WorkPage = () => {
     </Layout>
   )
 }
-
-export default WorkPage
