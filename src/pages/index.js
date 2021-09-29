@@ -36,7 +36,7 @@ export default function Home () {
         </p>
         
         <p>
-          I'm currently <a href="mailto:learn@gabykaram.com" title="Email me">available for hire.</a>
+          I'm currently <a href="mailto:info@gabykaram.com" title="Email me">available for hire.</a>
         </p>
       </div>
     </Layout>
