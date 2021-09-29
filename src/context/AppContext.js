@@ -102,6 +102,7 @@ const AppProvider = ({ children }) => {
         navigation: {
           ...navigation,
           toggleMenu: toggleMenu,
+          closeMenu: closeMenu,
         },
       }}
     >
