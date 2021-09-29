@@ -11,11 +11,15 @@ const {
 } = process.env
 
 const isNetlifyProduction = NETLIFY_ENV === "production"
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    siteUrl
+    siteUrl,
+    title: `Gaby Karam | Digital Producer & Developer`,
+    description: `I don’t find myself defined by who I am currently. I define myself by what I am looking to be.`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -44,6 +48,19 @@ module.exports = {
           }
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
   ]
 }
