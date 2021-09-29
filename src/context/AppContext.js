@@ -8,6 +8,7 @@ const defaultState = {
   navigation: {
     isOpen: false,
     toggleMenu: () => {},
+    closeMenu: () => {}
   },
 }
 const AppContext = React.createContext(defaultState)
@@ -76,6 +77,17 @@ const AppProvider = ({ children }) => {
       navigation: {
         ...state.navigation,
         isOpen: isOpen,
+      },
+    })
+  }
+
+  const closeMenu = () => {
+    document?.querySelector("html")?.classList?.remove("noScroll")
+    setState({
+      ...state,
+      navigation: {
+        ...state.navigation,
+        isOpen: false,
       },
     })
   }

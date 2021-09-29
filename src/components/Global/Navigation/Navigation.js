@@ -8,10 +8,13 @@ const Navigation = ({ isTransparent }) => {
     navigation.toggleMenu()
     event.preventDefault()
   }
+  const closeMenu = () => {
+   setTimeout(() => { navigation.closeMenu()}, 50)
+  }
   
   return (
-    <nav id="mainNav" className={`${navigation.isOpen ? "expanded" : ""} `} role="navigation" onClick={handleMenuClick}>
-      <span
+    <nav id="mainNav" className={`${navigation.isOpen ? "expanded" : ""} `} role="navigation" >
+      <span onClick={handleMenuClick}
         className={`menuIcon icon-menu icon  ${isTransparent && "transparent"}`} title="Menu (Esc)" tabIndex="0"
         data-icon="\e9bd">
         <span>Menu</span>
@@ -25,16 +28,16 @@ const Navigation = ({ isTransparent }) => {
           <ul className="siteLinks">
             <li><span>Site dishes</span></li>
             <li>
-              <Link to="/" className="home" activeClassName="current" title="Learn about me (H)">Home</Link>
+              <Link to="/" onClick={closeMenu} className="home" activeClassName="current" title="Learn about me (H)">Home</Link>
             </li>
             <li>
-              <Link to="/work/" className="work" activeClassName="current" title="Check out my work (W)">Work</Link>
+              <Link to="/work/" onClick={closeMenu} className="work" activeClassName="current" title="Check out my work (W)">Work</Link>
             </li>
             <li>
-              <Link to="/lab/" className="lab" activeClassName="current" title="Visit my lab (L)">Lab</Link>
+              <Link to="/lab/" onClick={closeMenu} className="lab" activeClassName="current" title="Visit my lab (L)">Lab</Link>
             </li>
             <li>
-              <Link to="/blog/" className="blog" activeClassName="current" title="Read my blog (B)">Blog</Link>
+              <Link to="/blog/" onClick={closeMenu} className="blog" activeClassName="current" title="Read my blog (B)">Blog</Link>
             </li>
           </ul>
           
