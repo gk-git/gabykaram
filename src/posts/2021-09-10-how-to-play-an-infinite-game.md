@@ -1,7 +1,7 @@
 ---
 title: "What is infinite game by Gaby Karam"
 date: 2020-09-10
-published: true
+published: false
 ---
 
 # How to play an infinite game:

@@ -1,6 +1,7 @@
-import { graphql } from 'gatsby'
+import { graphql, Link } from "gatsby"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
+import Layout from "../components/Global/Layout"
 
 export const query = graphql
   `
@@ -11,7 +12,7 @@ export const query = graphql
             body
             frontmatter {
                 title
-                date(formatString: "YYYY MMMM Do")
+                date(formatString: "Do MMMM YYYY")
             }
         }
     }
@@ -20,11 +21,14 @@ export const query = graphql
 const BlogSinglePostPage =  ({ data }) => {
   const { frontmatter, body } = data.mdx
   return (
-    <div>
+    <Layout>
+      <div className="navigation">
+        <Link to={'/blog'}>Go Back</Link>
+      </div>
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
       <MDXRenderer>{body}</MDXRenderer>
-    </div>
+    </Layout>
   )
 }
 

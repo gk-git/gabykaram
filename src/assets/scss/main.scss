@@ -4,3 +4,25 @@
 @import "general";
 @import "webring";
 @import "footer";
+
+main {
+  ul {
+    list-style: none;
+    li {
+      margin: 0;
+      padding: .8rem;
+      font-style: italic;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 1.5rem;
+      &::before {
+        content: "🎯 ";
+      }
+    }
+  }
+  hr {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
