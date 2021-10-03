@@ -309,11 +309,6 @@ strong, b {
 #mainNav.expanded #navigation {
   display: block;
 }
-#mainNav.expanded .menuIcon {
-  position: absolute;
-  right: 30px;
-  top: 0;
-}
   /* flexbox required property for vertical centering */
 #mainNav.expanded, #mainNav.transition {
   height: 100%;
@@ -458,6 +453,9 @@ strong, b {
   -moz-transition: opacity .3s;
   -o-transition: opacity .3s;
   transition: opacity .3s;
+  position: fixed;
+  top: 30px;
+  right: 30px;
 }
 
 /* hides menu icon at first */
@@ -491,9 +489,7 @@ strong, b {
 
 /* changes icon to an “X” */
 .expanded .menuIcon:before {
-  content: "x";
-  line-height: 1.1;
-  font-size: 2.2rem;
+  content: "\e903";
 }
 
 /* hides extra info from menu if screen height is too small */

@@ -26,8 +26,14 @@
 }
 
 .icon-menu:before {
-  content: "\e9bd";
+  content: "\e900";
 }
-.icon-cross:before {
-  content: "\ea0f";
+.icon-right-lane:before {
+  content: "\e901";
+}
+.icon-left-lane:before {
+  content: "\e902";
+}
+.icon-close:before {
+  content: "\e903";
 }
