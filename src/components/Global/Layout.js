@@ -1,7 +1,5 @@
 import React, { useContext } from "react"
 import "../../assets/scss/main.scss"
-import "../../assets/scss/print.scss"
-import "../../assets/scss/testings.scss"
 import Helmet from "react-helmet"
 import AppContext from "../../context/AppContext"
 import Footer from "./Footer"

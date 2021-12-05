@@ -1,0 +1,32 @@
+p, ul, ol, #footnotes {
+
+}
+
+::-moz-selection {
+  background: #c80909;
+  color: #fff
+}
+
+::selection {
+  background: #c80909;
+  color: #fff
+}
+
+a, a:visited, img, input, a:visited:hover {
+  transition: color .3s,opacity .3s,background .3s;
+  color: #c80909;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:active {
+  color: #222
+}
+
+a:visited {
+  color: #c66
+}
+
+a:hover {
+  color: #666
+}

@@ -1,28 +1,23 @@
-@import "colours";
-@import "fonts";
-@import "default-layout";
-@import "general";
-@import "webring";
-@import "footer";
+@import "brand/index";
+@import "components/navigation";
 
-main {
-  ul {
-    list-style: none;
-    li {
-      margin: 0;
-      padding: .8rem;
-      font-style: italic;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      grid-gap: 1.5rem;
-      &::before {
-        content: "🎯 ";
-      }
-    }
-  }
-  hr {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
+body {
+  margin: 0;
+  line-height: 1.5;
 }
-
+///* when navigation is shown, don’t allow scrolling of content */
+//.noScroll {
+//  -ms-touch-action: none; /* no scroll for mobile IE 10 */
+//  overflow: hidden;
+//}
+///* Firefox fix for overflow: hidden. Scroll bar is hidden and moves everything to the right */
+//@-moz-document url-prefix() {
+//  body.noScroll {
+//    /*margin-right: 23px;*/
+//  }
+//
+//  .noScroll #mainNav.expanded {
+//    /*padding-right: 7px;*/
+//    background: rgba(0, 0, 0, .95); /* because FF no blur, reduce bg transparency */
+//  }
+//}
