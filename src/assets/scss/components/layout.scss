@@ -1,0 +1,22 @@
+header {
+  background-color: white;
+}
+header, main, .parallax-placeholder {
+  position: relative; /* crucial for z-index to work */
+}
+header {
+  z-index: 11;
+}
+ main {
+  z-index: 10;
+}
+.parallax-placeholder {
+  z-index: 1;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  overflow: hidden;
+  width: 100%;
+}

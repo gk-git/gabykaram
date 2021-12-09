@@ -1,7 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import webRingMembers from "../../../content/webring.json"
-
+import FlameGif from '../../assets/images/flame.gif'
 const WebRingNavigation = () => {
   const prevSiteIndex = webRingMembers.members.length - 1;
   const nextSiteIndex = 1;
@@ -10,7 +10,7 @@ const WebRingNavigation = () => {
     <div className="webring">
       <p >
         {/* webRingMembers.members[prevSiteIndex]?.url */}
-        <span >A proud member of Batata Harra Webring</span>
+        <span >A proud member of Batata Harra</span>
         <a title={`Visit ${webRingMembers.members[prevSiteIndex]?.url}`} aria-label={`visit ${webRingMembers.members[prevSiteIndex]?.name} Dot Com`}
            href={webRingMembers.members[prevSiteIndex]?.url}>
           <i className="icon-left-lane"/>
@@ -18,7 +18,7 @@ const WebRingNavigation = () => {
         <a rel="noopener" title="Batata Harra Webring" aria-label="visit Batata Harra Dot Guru"
            className="text-decoration-none m-1" href="https://batataharra.guru" target="_blank">
               <span>
-                <img className="harra" src="https://abouhanna.com/images/flame.gif" alt="Flame"/>
+                <img className="harra" src={FlameGif} alt="Flame"/>
                 <span className="batata">🥔</span>
               </span>
         </a>

@@ -1,23 +1,7 @@
 @import "brand/index";
+@import "general";
+@import "components/layout";
 @import "components/navigation";
+@import "components/intro";
+@import "components/webring";
 
-body {
-  margin: 0;
-  line-height: 1.5;
-}
-///* when navigation is shown, don’t allow scrolling of content */
-//.noScroll {
-//  -ms-touch-action: none; /* no scroll for mobile IE 10 */
-//  overflow: hidden;
-//}
-///* Firefox fix for overflow: hidden. Scroll bar is hidden and moves everything to the right */
-//@-moz-document url-prefix() {
-//  body.noScroll {
-//    /*margin-right: 23px;*/
-//  }
-//
-//  .noScroll #mainNav.expanded {
-//    /*padding-right: 7px;*/
-//    background: rgba(0, 0, 0, .95); /* because FF no blur, reduce bg transparency */
-//  }
-//}

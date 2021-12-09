@@ -18,16 +18,21 @@ const Navigation = ({ isTransparent }) => {
     }
   }
   return (
-    <nav id="main-navigation" className={`main-navigation ${navigation.isOpen ? "expanded" : ""} `} role="navigation" onClick={handleNavigationClick}>
-      <span onClick={handleMenuClick}
-            className={`main-navigation__handle ${isTransparent ? "transparent" : ""}`} title="Menu (Esc)" tabIndex="0"
-            data-icon="\e9bd">
-        <span></span>
-      </span>
+    <nav id="main-navigation" className={`main-navigation ${navigation.isOpen ? "expanded" : ""} `} role="navigation"
+         onClick={handleNavigationClick}>
+      <div className="main-navigation__handle__wrapper">
+        <span onClick={handleMenuClick}
+              className={`main-navigation__handle ${isTransparent ? "transparent" : ""}`} title="Menu (Esc)"
+              tabIndex="0"
+              data-icon="\e9bd">
+          <span></span>
+        </span>
+        
+      </div>
       <div className={`main-navigation__menu ${navigation.isOpen ? "visible" : ""}`}>
         <div className="main-navigation__menu__wrapper">
           <p className="menu_label">Menu</p>
-  
+      
           <section>
             <ul className="siteLinks">
               <li><span>Site dishes</span></li>
@@ -36,24 +41,26 @@ const Navigation = ({ isTransparent }) => {
                       title="Learn about me (H)">Home</Link>
               </li>
               <li>
-                <Link to="/work/" onClick={closeMenu} className="work" activeClassName="current"
-                      title="Check out my work (W)">Work</Link>
+                <Link to="/portfolio/" onClick={closeMenu} className="portfolios" activeClassName="current"
+                      title="Check out my portfolio (W)">Portfolio</Link>
               </li>
               <li>
-                <Link to="/lab/" onClick={closeMenu} className="lab" activeClassName="current" title="Visit my lab (L)">Lab</Link>
+                <Link to="/lab/" onClick={closeMenu} className="lab" activeClassName="current"
+                      title="Visit my lab (L)">Lab</Link>
               </li>
               <li>
-                <Link to="/blog/" onClick={closeMenu} className="blog" activeClassName="current" title="Read my blog (B)">Blog</Link>
+                <Link to="/blog/" onClick={closeMenu} className="blog" activeClassName="current"
+                      title="Read my blog (B)">Blog</Link>
               </li>
             </ul>
-    
+        
             <ul className="contact">
               <li><span>Main contact</span></li>
               <li><a
                 href="mailto:info@gabykaram.com"
                 className="email" title="Email me (E)">Email</a></li>
             </ul>
-    
+        
             <ul className="deserts">
               <li><span>Desserts</span></li>
               <li>
@@ -68,8 +75,9 @@ const Navigation = ({ isTransparent }) => {
                    target="_blank">Facebook</a>
               </li>
             </ul>
-    
-            <p className="notes">Some of our dishes may contain sarcasm and humour. <br />Please don&rsquo;t inform our staff about any
+        
+            <p className="notes">Some of our dishes may contain sarcasm and humour. <br />Please don&rsquo;t inform
+              our staff about any
               allergies you might have.</p>
           </section>
         </div>

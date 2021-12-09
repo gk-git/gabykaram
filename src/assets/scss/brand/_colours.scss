@@ -6,6 +6,12 @@
   --main-bg-color: hsl(308deg 31% 35%);
   --secondary-bg-color: hsl(60deg 100% 70%);
 
+
+  --main-bg-color--60: hsl(308deg 31% 35%/60%);
+  --secondary-bg-color--20: hsl(60deg 100% 70%/ 20%);
+  --secondary-bg-color--40: hsl(60deg 100% 70%/ 40%);
+
   --link-color: hsl(60deg 100% 70%);
   --link--hover-color: hsl(120deg 100% 90%);
+  --box-shadow: 0px 0px 0.3rem rgb(148 136 195 / 70%);
 }

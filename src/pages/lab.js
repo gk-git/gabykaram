@@ -1,4 +1,5 @@
 import React from "react"
+import Intro from "../components/Global/Intro"
 import Layout from "../components/Global/Layout"
 
 const labLinks = [
@@ -21,7 +22,10 @@ const labLinks = [
 ]
 export default function LabPage() {
   return (
-    <Layout>
+    <Layout
+      showIntro={true}
+      introComponent={<Intro />}
+    >
       <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
         <div>
           <p style={{ fontSize: "2rem" }}>
