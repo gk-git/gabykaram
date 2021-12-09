@@ -36,28 +36,38 @@
   text-align: center;
 
   &__handle {
+    cursor: pointer;
+    &:hover :before {
+      /* Start the shake animation and make the animation last for 0.5 seconds */
+      animation: shake 1s;
 
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite;
+    }
 
     :before {
       font-family: 'icomoon', sans-serif;
       content: "\e901";
       font-size: 3rem;
+      display: inline-block;
     }
 
     &__wrapper {
       max-width: 1200px;
-      margin: auto;
       position: absolute;
       top: 20px;
       right: 0;
       left: 0;
+      margin: auto;
+      padding-left: 2.5%;
+      padding-right: 2.5%;
       color: var(--main-color);
       z-index: 22;
-      cursor: pointer;
+
       text-align: right;
     }
   }
-
+ 
   &__menu {
     background: rgba(0, 0, 0, .85);
     transform: translate3d(0, -800px, 0);
