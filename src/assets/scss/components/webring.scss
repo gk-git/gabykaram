@@ -1,0 +1,56 @@
+.webring {
+  text-align: center;
+  font: 100% system-ui, sans-serif;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: hsl(60deg 100% 70% / 30%);
+
+  .icon {
+    font-size: 100px;
+  }
+
+  p {
+    color: hsl(288deg 100% 35%);
+    font-size: 1.5rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: hsl(360deg 31% 35%);
+    padding: 0 4px
+  }
+
+  a:hover {
+    color: hsl(260deg 31% 35%);
+    transition: .3s;
+    font-weight: bold;
+  }
+
+  .batata {
+    display: inline-block;
+    min-width: 40px;
+  }
+
+  .harra {
+    position: absolute;
+    transform: translate(-2%, -70%);
+    width: 40px;
+    z-index: 32;
+  }
+
+  @media screen and (min-width: 450px) {
+
+    .harra {
+      transform: translate(-8%, -72%);
+      width: fit-content;
+    }
+  }
+
+}

@@ -1,22 +1,26 @@
-import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
 
 const Intro = () => {
   return (
-    <div id="intro" className="fadeWhiteGradient">
-      <div className="content">
-        <h1 className="animateOnFirstLoad">Gab<span className="char1">y</span>&nbsp;<span
-          className="char2">K</span>ar<span
-          className="char3">a</span>m</h1>
-        <h2 className="animateOnFirstLoad">Digital Producer & Developer</h2>
+    <div className="intro">
+      <div className="intro__content">
+        <div className="intro__picture">
+          <StaticImage src="../../assets/images/profile.png" alt="A dinosaur"
+                       placeholder="blurred"
+                       width={300}
+                       height={300}
+          />
+        </div>
+        <p>
+          <span className="intro__title">Good Morning</span>
+          <span className="intro__sub-title">My name is <strong>Gaby Karam</strong></span>
+        </p>
+        <p className="intro__target">
+          <span> I am a strong believer in the learn by teaching concepts and a technical artist 🧑‍💻🧑‍🎨.
+            On my tech status, I am a full stack developer who strives to become a designer.</span>
+        </p>
       </div>
-      <span className="bg-images">
-        <StaticImage src="../../assets/images/profile.png" alt="A dinosaur" />
-      </span>
-      <div className="bg-color">
-        <span className="bg-color__layer_two"></span>
-      </div>
-    
     </div>
   )
 }
@@ -26,7 +30,6 @@ export const BlogIntro = () => {
     <div id="intro" className="fadeWhiteGradient second-portfolio">
       <div className="content">
         <StaticImage style={{width: '200px', height: 'auto'}} src="../../assets/images/gaby-logo.png" alt="A dinosaur" />
-        
         <h1 className="animateOnFirstLoad">Gab<span className="char1">y</span>&nbsp;<span
           className="char2">K</span>ar<span
           className="char3">a</span>m</h1>
