@@ -1,6 +1,6 @@
 ---
 title: "The Myth about domain names"
-date: 2020-12-09
+date: 2021-12-09
 published: true
 featuredImage: ../assets/images/blog/domain.jpg
 ---
