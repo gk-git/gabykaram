@@ -1,7 +1,29 @@
 import { StaticImage } from "gatsby-plugin-image"
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 const Intro = () => {
+  const [state, setState] = useState({
+    greet: "Good Morning"
+  })
+  useEffect(() => {
+    const myDate = new Date()
+    let hrs = myDate.getHours()
+    
+    let greet
+    
+    if (hrs >= 4 && hrs < 12)
+      greet = "Good Morning"
+    else if (hrs >= 12 && hrs <= 17)
+      greet = "Good Afternoon"
+    else
+      greet = "Good Evening"
+    
+    setState({
+      ...state,
+      greet: greet
+    })
+    
+  }, [])
   return (
     <div className="intro">
       <div className="intro__content">
@@ -13,7 +35,7 @@ const Intro = () => {
           />
         </div>
         <p>
-          <span className="intro__title">Good Morning</span>
+          <span className="intro__title">{state.greet}</span>
           <span className="intro__sub-title">My name is <strong>Gaby Karam</strong></span>
         </p>
         <p className="intro__target">
