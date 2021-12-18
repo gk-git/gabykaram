@@ -1,5 +1,5 @@
 ---
-title: "Who is Gaby Karam"
+title: "Do I Have An Ego"
 date: 2021-12-18
 published: true
 ---

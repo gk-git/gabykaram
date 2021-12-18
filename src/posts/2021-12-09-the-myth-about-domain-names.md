@@ -1,5 +1,5 @@
 ---
-title: "The Myth about domain names"
+title: "The Myth About Domain Names"
 date: 2021-12-09
 published: true
 featuredImage: ../assets/images/blog/domain.jpg
