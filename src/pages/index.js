@@ -44,7 +44,7 @@ export default function Home () {
         <section>
           <div className="projects">
             <div className="project">
-              <a href="https://concertforafghanistan.com/" target="_blank">
+              <a href="https://concertforafghanistan.com/" rel="noopener" target="_blank">
                 <StaticImage src="../assets/images/projects/concertforafghanistan.com.png" alt="A dinosaur"
                              placeholder="blurred"
                 />
@@ -54,7 +54,7 @@ export default function Home () {
               </a>
             </div>
             <div className="project">
-              <a href="https://www.mehnati.org/" target="_blank">
+              <a href="https://www.mehnati.org/" rel="noopener" target="_blank">
                 <StaticImage src="../assets/images/projects/mehnati.org.png" alt="A dinosaur"
                              placeholder="blurred"
                 />
