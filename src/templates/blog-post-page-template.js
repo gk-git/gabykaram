@@ -25,12 +25,13 @@ const BlogSinglePostPage =  ({ data }) => {
     <Layout
       showIntro={true}
       introComponent={<Intro />}
+      className={'blog-post'}
     >
       <div className="navigation">
         <Link to={'/blog'}>Go Back</Link>
       </div>
       <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.date}</p>
+      <p className="date">{frontmatter.date}</p>
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   )

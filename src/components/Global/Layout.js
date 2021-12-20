@@ -10,7 +10,8 @@ const Layout = ({
                   navigationProps,
                   showIntro = false,
                   introComponent,
-                  children
+                  children,
+                  className =''
                 }) => {
   const [state, setState] = useState({
     placeholderTop: undefined,
@@ -101,7 +102,7 @@ const Layout = ({
     }
   }
   return (
-    <div className={`default-layout ${navigation.isOpen ? "open" : "close"}`}>
+    <div className={`default-layout ${className} ${navigation.isOpen ? "open" : "close"}`}>
       <Helmet
         htmlAttributes={{
           lang: "en"

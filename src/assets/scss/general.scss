@@ -50,3 +50,14 @@ body, html {
     color: white;
   }
 }
+
+pre {
+  padding: 1.6em 0.8em;
+  margin: 1.5em auto;
+  background: linear-gradient(to top left,#753e6e 0,#b979b0);
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  border: 1px solid white;
+}
