@@ -1,4 +1,4 @@
-import { graphql, Link } from "gatsby"
+import { graphql, Link,navigate } from "gatsby"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import Intro from "../components/Global/Intro"
@@ -20,7 +20,11 @@ export const query = graphql
 `
 
 const BlogSinglePostPage =  ({ data }) => {
-  const { frontmatter, body } = data.mdx
+  const { frontmatter, body } = data.mdx;
+  
+  const handleBackButtonClick = () => {
+    navigate('/blog')
+  }
   return (
     <Layout
       showIntro={true}
@@ -28,7 +32,7 @@ const BlogSinglePostPage =  ({ data }) => {
       className={'blog-post'}
     >
       <div className="navigation">
-        <Link to={'/blog'}>Go Back</Link>
+        <button className="navigation__back" onClick={handleBackButtonClick}>Go Back</button>
       </div>
       <h1>{frontmatter.title}</h1>
       <p className="date">{frontmatter.date}</p>
