@@ -36,7 +36,12 @@
   text-align: center;
 
   &__handle {
+    background-color: transparent;
+    border: unset;
     cursor: pointer;
+    color: var(--main-color);
+    outline: none;
+
     &:hover :before {
       /* Start the shake animation and make the animation last for 0.5 seconds */
       animation: shake 1s;
