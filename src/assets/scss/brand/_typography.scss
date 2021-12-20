@@ -34,7 +34,7 @@ p, ul, ol, #footnotes {
 
 a, a:visited, img, input, a:visited:hover {
   transition: color .3s,opacity .3s,background .3s;
-  color: #c80909;
+  color: var(--link-color);
   display: inline-block;
   text-decoration: none;
 }
