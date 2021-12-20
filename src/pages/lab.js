@@ -40,7 +40,7 @@ export default function LabPage() {
               {
                 labLinks.map(({ href, label }) => (
                   <li>
-                    <a href={href} rel="noreferrer" target="_blank">
+                    <a href={href} rel="noreferrer noreferrer" target="_blank">
                       {label}
                     </a>
                   </li>

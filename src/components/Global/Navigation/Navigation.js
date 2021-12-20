@@ -64,15 +64,13 @@ const Navigation = ({ isTransparent }) => {
             <ul className="deserts">
               <li><span>Desserts</span></li>
               <li>
-                <a href="https://www.linkedin.com/in/gabykaram/" title="Find me on linkedIn" rel="noreferrer"
-                   target="_blank">LinkedIn</a></li>
+                <a href="https://www.linkedin.com/in/gabykaram/" title="Find me on linkedIn" rel="noreferrer" target="_blank"> LinkedIn</a></li>
               <li>
-                <a href="http://github.com/gk-git" title="Find me on GitHub" rel="noreferrer"
-                   target="_blank">GitHub</a>
+                <a href="http://github.com/gk-git" title="Find me on GitHub" rel="noreferrer"> GitHub</a>
               </li>
               <li>
                 <a href="https://www.facebook.com/gaby.karam.gk/" title="Find me on Facebook" rel="noreferrer"
-                   target="_blank">Facebook</a>
+                   target="_blank"> Facebook</a>
               </li>
             </ul>
         

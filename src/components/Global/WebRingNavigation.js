@@ -15,7 +15,7 @@ const WebRingNavigation = () => {
            href={webRingMembers.members[prevSiteIndex]?.url}>
           <i className="icon-left-lane"/>
         </a>
-        <a rel="noopener" title="Batata Harra Webring" aria-label="visit Batata Harra Dot Guru"
+        <a rel="noopener noreferrer" title="Batata Harra Webring" aria-label="visit Batata Harra Dot Guru"
            className="text-decoration-none m-1" href="https://batataharra.guru" target="_blank">
               <span>
                 <img className="harra" src={FlameGif} alt="Flame"/>
