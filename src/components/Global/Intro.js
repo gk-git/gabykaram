@@ -28,7 +28,7 @@ const Intro = () => {
     <div className="intro">
       <div className="intro__content">
         <div className="intro__picture">
-          <StaticImage src="../../assets/images/profile.png" alt="A dinosaur"
+          <StaticImage src="../../assets/images/profile.png" alt="Gaby's face photo"
                        placeholder="blurred"
                        width={300}
                        height={300}
@@ -51,7 +51,7 @@ export const BlogIntro = () => {
   return (
     <div id="intro" className="fadeWhiteGradient second-portfolio">
       <div className="content">
-        <StaticImage style={{width: '200px', height: 'auto'}} src="../../assets/images/gaby-logo.png" alt="A dinosaur" />
+        <StaticImage style={{width: '200px', height: 'auto'}} src="../../assets/images/gaby-logo.png" alt="Gaby's Logo" />
         <h1 className="animateOnFirstLoad">Gab<span className="char1">y</span>&nbsp;<span
           className="char2">K</span>ar<span
           className="char3">a</span>m</h1>

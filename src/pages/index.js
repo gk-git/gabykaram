@@ -27,7 +27,7 @@ export default function Home () {
           <div className="projects">
             <div className="project">
               <a href="https://concertforafghanistan.com/" rel="noopener noreferrer" target="_blank">
-                <StaticImage src="../assets/images/projects/concertforafghanistan.com.png" alt="A dinosaur"
+                <StaticImage src="../assets/images/projects/concertforafghanistan.com.png" alt="Concert For Afghanistan visual"
                              placeholder="blurred"
                 />
                 <span className="project__content">
@@ -37,7 +37,7 @@ export default function Home () {
             </div>
             <div className="project">
               <a href="https://www.mehnati.org/" rel="noopener noreferrer" target="_blank">
-                <StaticImage src="../assets/images/projects/mehnati.org.png" alt="A dinosaur"
+                <StaticImage src="../assets/images/projects/mehnati.org.png" alt="Mehnati visual"
                              placeholder="blurred"
                 />
                 <span className="project__content">

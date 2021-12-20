@@ -50,16 +50,15 @@ export default function BlogPage ({ data }) {
         data.allMdx.nodes.length > 0 ? (
         
           <div>
-            {data.allMdx.nodes.map(({ excerpt, frontmatter, fields,markdownRemark }) => {
-              console.log('frontmatter', frontmatter)
+            {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => {
               let featuredImgFluid =frontmatter?.featuredImage?.childImageSharp?.fluid ||undefined;
   
               return (
-                <Link key={frontmatter} to={fields.slug} className="blog-post-item">
+                <Link key={excerpt} to={fields.slug} className="blog-post-item">
                   {
                     featuredImgFluid ? (
                       <Img fluid={featuredImgFluid} className="blog-feature-image" />
-                    ): <StaticImage src="../assets/images/gaby-logo.png" alt="A dinosaur" className="blog-feature-image blog-feature-image--default"
+                    ): <StaticImage src="../assets/images/gaby-logo.png" alt="Gaby's Logo" className="blog-feature-image blog-feature-image--default"
                                     placeholder="blurred"
                                    
                     />

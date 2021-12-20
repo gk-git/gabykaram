@@ -18,7 +18,7 @@ export default function PortfolioPage () {
         <div className="projects">
           <div className="project">
             <a href="https://concertforafghanistan.com/" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/concertforafghanistan.com.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/concertforafghanistan.com.png" alt="Concert For Afghanistan visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -28,7 +28,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://www.mehnati.org/" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/mehnati.org.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/mehnati.org.png" alt="Mehnati visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -38,7 +38,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://abouhanna.com" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/abouhanna.com.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/abouhanna.com.png" alt="Kevin Abou Hanna visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -48,7 +48,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://mmfidawla.com" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/mmfidawla.com.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/mmfidawla.com.png" alt="Mouwatinoun wa Mouwatinat fi Dawla visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -58,7 +58,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://codebravetutors.org" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/codebravetutors.org.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/codebravetutors.org.png" alt="Codebrave Tutors visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -68,7 +68,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://garderlecap.global" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/garderlecap.global.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/garderlecap.global.png" alt="Garder Le Cap visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -78,7 +78,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://codi.tech" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/codi.tech.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/codi.tech.png" alt="Codi Tech visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -88,7 +88,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://summerofinnovation.io" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/summerofinnovation.io.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/summerofinnovation.io.png" alt="Summer Of Innovation visual"
                            placeholder="blurred"
               />
               <span className="project__content">
@@ -98,7 +98,7 @@ export default function PortfolioPage () {
           </div>
           <div className="project">
             <a href="https://nextgenlondon.com" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/nextgenlondon.com.png" alt="A dinosaur"
+              <StaticImage src="../assets/images/projects/nextgenlondon.com.png" alt="NextGen London visual"
                            placeholder="blurred"
               />
               <span className="project__content">
