@@ -18,10 +18,10 @@ const Intro = () => {
     else
       greet = "Good Evening"
     
-    setState({
-      ...state,
+    setState((prevState => ({
+      ...prevState,
       greet: greet
-    })
+    })))
     
   }, [])
   return (

@@ -1,7 +1,7 @@
 import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
-import Intro, { BlogIntro } from "../components/Global/Intro"
+import Intro from "../components/Global/Intro"
 import Layout from "../components/Global/Layout"
 import Img from "gatsby-image"
 export const query = graphql

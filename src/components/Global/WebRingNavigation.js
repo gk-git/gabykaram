@@ -1,4 +1,3 @@
-import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import webRingMembers from "../../../content/webring.json"
 import FlameGif from '../../assets/images/flame.gif'

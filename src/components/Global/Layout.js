@@ -1,6 +1,6 @@
+import "normalize.css/normalize.css"
 import React, { useContext, useEffect, useRef, useState } from "react"
 import Helmet from "react-helmet"
-import "normalize.css/normalize.css"
 import "../../assets/scss/main.scss"
 import AppContext from "../../context/AppContext"
 import useWindowSize from "../../hooks/useWindowSize"
@@ -37,10 +37,23 @@ const Layout = ({
       })
     };
   });
-  useEffect(()=> {
+  
+  const checkFooterHeight = () => {
+    
+    if (footer.current.offsetHeight > window.innerHeight) { // Check if footer is taller than window height
+      window.addEventListener("scroll", onScroll)
+      footer.current.style.bottom = "unset"
+      footer.current.style.top = "0px"
+    } else { // If footer height is not greater than window height, bottom is 0 for normal parllax
+      window.removeEventListener("scroll", onScroll)
+      footer.current.style.top = "unset"
+      footer.current.style.bottom = "0px"
+    }
+  }
+  useEffect(() => {
     updateHolderHeight()
     checkFooterHeight()
-  })
+  }, [])
   useEffect(() => {
     // console.log("using effect")
     updateHolderHeight()
@@ -56,22 +69,11 @@ const Layout = ({
     if (event.defaultPrevented) {
       // This is not a passive event
       event.preventDefault();
-  
+      
     }
     document.querySelector('main').scrollTop += event?.originalEvent?.deltaY || 0;
   }
-  const checkFooterHeight = () => {
-    
-    if (footer.current.offsetHeight > window.innerHeight) { // Check if footer is taller than window height
-      window.addEventListener("scroll", onScroll)
-      footer.current.style.bottom = "unset"
-      footer.current.style.top = "0px"
-    } else { // If footer height is not greater than window height, bottom is 0 for normal parllax
-      window.removeEventListener("scroll", onScroll)
-      footer.current.style.top = "unset"
-      footer.current.style.bottom = "0px"
-    }
-  }
+ 
   
   const onScroll = () => {
     setState({

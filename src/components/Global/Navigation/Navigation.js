@@ -21,12 +21,11 @@ const Navigation = ({ isTransparent }) => {
     <nav id="main-navigation" className={`main-navigation ${navigation.isOpen ? "expanded" : ""} `} role="navigation"
          onClick={handleNavigationClick}>
       <div className="main-navigation__handle__wrapper">
-        <span onClick={handleMenuClick}
+        <button onClick={handleMenuClick} role="button"
               className={`main-navigation__handle ${isTransparent ? "transparent" : ""}`} title="Menu (Esc)"
-              tabIndex="0"
               data-icon="\e9bd">
           <span></span>
-        </span>
+        </button>
         
       </div>
       <div className={`main-navigation__menu ${navigation.isOpen ? "visible" : ""}`}>

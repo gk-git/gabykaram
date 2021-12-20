@@ -5,24 +5,6 @@ import Helmet from "react-helmet"
 import Intro from "../components/Global/Intro"
 import Layout from "../components/Global/Layout"
 
-const projects = [
-  {
-    image: 'codi.tech.png'
-  },
-  {
-    image: 'codi.tech.png'
-  },
-  {
-    image: 'codi.tech.png'
-  },
-  {
-    image: 'codi.tech.png'
-  },
-  {
-    image: 'codi.tech.png'
-  },
-  
-];
 export default function Home () {
   return (
     <Layout
