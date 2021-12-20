@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react"
 import Helmet from "react-helmet"
+import "normalize.css/normalize.css"
 import "../../assets/scss/main.scss"
 import AppContext from "../../context/AppContext"
 import useWindowSize from "../../hooks/useWindowSize"
