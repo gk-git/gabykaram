@@ -18,6 +18,16 @@ export default function PortfolioPage () {
         <div className="projects">
           <div className="project">
             <a href="https://concertforafghanistan.com/" rel="noopener noreferrer" target="_blank">
+              <StaticImage src="../assets/images/projects/riothere.com.png" alt="Riothere"
+                           placeholder="blurred"
+              />
+              <span className="project__content">
+                  <span className="project__title">Riothere</span>
+              </span>
+            </a>
+          </div>
+          <div className="project">
+            <a href="https://concertforafghanistan.com/" rel="noopener noreferrer" target="_blank">
               <StaticImage src="../assets/images/projects/concertforafghanistan.com.png" alt="Concert For Afghanistan visual"
                            placeholder="blurred"
               />
