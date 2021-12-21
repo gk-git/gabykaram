@@ -30,20 +30,18 @@ main.content {
 
     &:hover {
       .project__content {
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
+        transform: translate(0, 0);
       }
     }
 
     &__content {
       transition: all 0.6s ease;
+      transform: translate(-100%,-100%);
       position: absolute;
-      left: -100%;
-      top: -100%;
-      bottom: 100%;
-      right: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
       background-color: var(--main-bg-color--60);
       color: #fff;
       align-items: center;
