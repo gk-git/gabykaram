@@ -12,7 +12,7 @@ const WebRingNavigation = () => {
         <span >A proud member of Batata Harra</span>
         <a title={`Visit ${webRingMembers.members[prevSiteIndex]?.url}`} aria-label={`visit ${webRingMembers.members[prevSiteIndex]?.name} Dot Com`}
            href={webRingMembers.members[prevSiteIndex]?.url}>
-          <i className="icon-left-lane"/>
+          <i className="icon-left-arrows"/>
         </a>
         <a rel="noopener noreferrer" title="Batata Harra Webring" aria-label="visit Batata Harra Dot Guru"
            className="text-decoration-none m-1" href="https://batataharra.guru" target="_blank">
@@ -23,7 +23,7 @@ const WebRingNavigation = () => {
         </a>
         <a title={`Visit ${webRingMembers.members[nextSiteIndex]?.url}`} aria-label={`visit ${webRingMembers.members[nextSiteIndex]?.name} Dot Com`}
            href={webRingMembers.members[nextSiteIndex]?.url}>
-          <i className="icon-right-lane"/>
+          <i className="icon-right-arrows"/>
         </a>
       </p>
     </div>
