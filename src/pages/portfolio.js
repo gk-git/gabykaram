@@ -17,7 +17,7 @@ export default function PortfolioPage () {
       <section>
         <div className="projects">
           <div className="project">
-            <a href="https://concertforafghanistan.com/" rel="noopener noreferrer" target="_blank">
+            <a href="https://riothere.com/" rel="noopener noreferrer" target="_blank">
               <StaticImage src="../assets/images/projects/riothere.com.png" alt="Riothere"
                            placeholder="blurred"
               />
