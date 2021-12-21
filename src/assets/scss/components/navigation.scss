@@ -27,7 +27,7 @@
     .main-navigation__handle {
 
       :before {
-        font-family: 'icomoon', sans-serif;
+        font-family: 'gabykaram', sans-serif;
         content: "\e900";
       }
     }
@@ -51,7 +51,7 @@
     }
 
     :before {
-      font-family: 'icomoon', sans-serif;
+      font-family: 'gabykaram', sans-serif;
       content: "\e901";
       font-size: 3rem;
       display: inline-block;
@@ -72,7 +72,7 @@
       text-align: right;
     }
   }
- 
+
   &__menu {
     background: rgba(0, 0, 0, .85);
     transform: translate3d(0, -800px, 0);
