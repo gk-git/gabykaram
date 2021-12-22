@@ -6,8 +6,8 @@
   height: 96px;
   width: 100%;
   display: grid;
-  font-size: 18px;
-
+  font-size: 23px;
+  overflow: scroll;
   @media all and (min-width: 767px) {
     font-size: 28px;
   }
@@ -103,17 +103,23 @@
   }
 
   section {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "siteLinks deserts" "contact ." "notes notes";
-    max-width: 666px;
+    width: 66%;
+    max-width: 767px;
     margin: auto;
     text-align: left;
     font-weight: 500;
 
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
 
     ul {
       list-style-type: none;
+      width: 50%;
+      margin-bottom: 1em;
 
       span {
         color: var(--main-color);
@@ -136,25 +142,32 @@
 
     .siteLinks {
       grid-area: siteLinks;
+      order: 0;
+      text-align: left;
     }
 
     .contact {
       grid-area: contact;
+      order: 2;
+      text-align: left;
     }
 
     .deserts {
       grid-area: deserts;
+      order: 1;
+      text-align: right;
     }
 
     .notes {
       grid-area: notes;
+      order: 3;
 
 
       text-align: center;
       font-size: .6em;
       line-height: 1.5em;
       font-style: italic;
-      color: #555;
+      color: var(--secondary-color);
       margin-top: 1.6em;
       width: 110%;
       margin-left: -5%;

@@ -73,7 +73,7 @@ const Navigation = ({ isTransparent }) => {
               </li>
             </ul>
         
-            <p className="notes">Some of our dishes may contain sarcasm and humour. <br />Please don&rsquo;t inform
+            <p className="notes">Some of our dishes may contain sarcasm and humour. <br />Please inform
               our staff about any
               allergies you might have.</p>
           </section>
