@@ -36,15 +36,16 @@
   color: #707070;
 }
 
-.icon-link:before {
+.icon-arrow-down:before {
   content: "\e902";
-  color: #707070;
 }
-
-.icon-right-arrows:before {
-  content: "\e904";
-}
-
-.icon-left-arrows:before {
+.icon-arrow-up:before {
   content: "\e903";
 }
+.icon-arrow-left:before {
+  content: "\e904";
+}
+.icon-arrow-right:before {
+  content: "\e905";
+}
+
