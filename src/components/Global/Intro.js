@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react"
 
 const Intro = () => {
   const [state, setState] = useState({
-    greet: "Good Morning"
+    greet: "Good Morning",
+    isIntroOpenOnMobile: false
   })
   useEffect(() => {
     const myDate = new Date()
@@ -17,13 +18,21 @@ const Intro = () => {
       greet = "Good Afternoon"
     else
       greet = "Good Evening"
-    
+  
     setState((prevState => ({
       ...prevState,
       greet: greet
     })))
-    
-  }, [])
+  
+  }, []);
+  
+  const handleIntroToggle = (event) => {
+    event.preventDefault()
+    setState(prvState => ({
+      ...prvState,
+      isIntroOpenOnMobile: !prvState.isIntroOpenOnMobile
+    }))
+  }
   return (
     <div className="intro">
       <div className="intro__content">
@@ -38,29 +47,16 @@ const Intro = () => {
           <span className="intro__title">{state.greet}</span>
           <span className="intro__sub-title">My name is <strong>Gaby Karam</strong></span>
         </p>
-        <p className="intro__target">
-          <span> I am a strong believer in the learn by teaching concepts and a technical artist 🧑‍💻🧑‍🎨.
+        <p className={`intro__target ${state.isIntroOpenOnMobile ? " open " : ""}`}>
+          <span className="intro__target__content">I am a strong believer in the learn by teaching concepts and a technical artist 🧑‍💻🧑‍🎨.
             On my tech status, I am a full stack developer who strives to become a designer.</span>
+          <button className="intro__target__handler" onClick={handleIntroToggle}>
+            <span className="intro__target__handler__text">Click to expand</span>
+            <span className="intro__target__handler__icon" />
+            
+          </button>
         </p>
       </div>
-    </div>
-  )
-}
-
-export const BlogIntro = () => {
-  return (
-    <div id="intro" className="fadeWhiteGradient second-portfolio">
-      <div className="content">
-        <StaticImage style={{width: '200px', height: 'auto'}} src="../../assets/images/gaby-logo.png" alt="Gaby's Logo" />
-        <h1 className="animateOnFirstLoad">Gab<span className="char1">y</span>&nbsp;<span
-          className="char2">K</span>ar<span
-          className="char3">a</span>m</h1>
-        <h2 className="animateOnFirstLoad">Digital Producer & Developer</h2>
-      </div>
-      <div className="bg-color">
-        <span className="bg-color__layer_two"></span>
-      </div>
-    
     </div>
   )
 }

@@ -1,11 +1,17 @@
 .intro {
   align-items: center;
   display: grid;
-  min-height: 600px;
+  min-height: 300px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
   background-color: hsl(60deg 100% 70% / 30%);
+  @media (min-width: 500px) {
+    min-height: 450px;
+  }
+  @media (min-width: 767px) {
+    min-height: 600px;
+  }
 
   &__content {
     display: flex;
@@ -19,22 +25,36 @@
   }
 
   &__picture {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
+    height: 100px;
+
+
     grid-area: picture;
-    margin-right: 2em;
-    box-shadow: var(--box-shadow);
-    //background-color: hsla(308deg 31% 35%/ 100%);
+    width: 100%;
+    text-align: center;
+    .gatsby-image-wrapper {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+
+    }
+    @media (min-width: 500px) {
+      width: 100px;
+      margin-right: 2em;
+    }
+    @media (min-width: 767px) {
+      width: 200px;
+      height: 200px;
+    }
     img {
       pointer-events: none;
     }
   }
 
   &__title {
-    font-size: 3.8rem;
-    line-height: 1.658;
+    font-size: 2.5rem;
+    line-height: 1.258;
     justify-content: flex-start;
     display: flex;
     color: var(--main-color);
@@ -42,29 +62,88 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    @media (min-width: 767px) {
+      font-size: 3.8rem;
+      line-height: 1.658;
+    }
   }
 
   &__sub-title {
     padding-left: 4px;
     color: var(--main-color);
-
+    font-size: 1.2rem;
+    @media (min-width: 767px) {
+      font-size: inherit;
+    }
   }
 
   &__target {
-    margin-top: 2rem;
     width: 100%;
-    flex-basis: 100%;
-    text-align: center;
+    $self: &;
 
-    font-size: 1.8rem;
-    line-height: 1.658;
-    color: var(--main-color);
-    //background: linear-gradient(to top right,
-    //        hsl(80deg 90% 20%) 0,
-    //        hsl(308deg 31% 35%)
-    //);
-    //background-clip: text;
-    //-webkit-background-clip: text;
-    //-webkit-text-fill-color: transparent;
+    &.open {
+      #{ $self }__content {
+        @include undo-visually-hidden;
+        padding: 2rem;
+        display: block;
+        transition: all 0.6s ease-in-out;
+
+      }
+
+      #{ $self }__handler {
+        &__icon {
+          @include arrowsUp;
+        }
+      }
+    }
+
+    &__content {
+      width: 100%;
+      flex-basis: 100%;
+      text-align: center;
+      font-size: 1.3rem;
+      max-width: 500px;
+      line-height: 1.658;
+      color: var(--main-color);
+      @include visually-hidden;
+      transition: all 0.6s ease;
+
+      @media (min-width: 500px) {
+        padding: 2rem;
+        display: block;
+        @include undo-visually-hidden;
+        margin: auto;
+      }
+      @media (min-width: 767px) {
+        font-size: 1.8rem;
+        max-width: inherit;
+      }
+    }
+
+    &__handler {
+      @include removeButtonStyles;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @media (min-width: 500px) {
+        display: none;
+      }
+      @include moveUpDown(10px, true);
+      margin-bottom: 10px;
+
+      &__icon {
+        @include siteIcon;
+        @include arrowsDown;
+        font-size: 0.8rem;
+      }
+
+      &__text {
+        @include visually-hidden;
+      }
+    }
   }
 }

@@ -1,0 +1,21 @@
+@mixin removeButtonStyles {
+  background: unset;
+  border: unset;
+}
+
+@mixin moveUpDown($value, $infinite: false) {
+  @keyframes MoveUpDown_#{$value} {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY($value);
+    }
+  }
+  @if ($infinite) {
+    animation: MoveUpDown_#{$value} 3s linear infinite;
+
+  } @else {
+    animation: MoveUpDown_#{$value} 3s linear;
+  }
+}
