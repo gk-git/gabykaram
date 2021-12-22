@@ -19,7 +19,7 @@ const Navigation = ({ isTransparent }) => {
   }
   return (
     <nav id="main-navigation" className={`main-navigation ${navigation.isOpen ? "expanded" : ""} `} role="navigation"
-         onClick={handleNavigationClick}>
+         >
       <div className="main-navigation__handle__wrapper">
         <button onClick={handleMenuClick} role="button"
               className={`main-navigation__handle ${isTransparent ? "transparent" : ""}`} title="Menu (Esc)"

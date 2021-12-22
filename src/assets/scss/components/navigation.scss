@@ -7,12 +7,12 @@
   width: 100%;
   display: grid;
   font-size: 23px;
-  overflow: scroll;
   @media all and (min-width: 767px) {
     font-size: 28px;
   }
 
   &.expanded {
+    overflow: scroll;
     position: fixed;
     top: 0;
     right: 0;
@@ -168,9 +168,7 @@
       line-height: 1.5em;
       font-style: italic;
       color: var(--secondary-color);
-      margin-top: 1.6em;
-      width: 110%;
-      margin-left: -5%;
+      width: 100%;
 
       @media screen and (min-width: 768px) {
         font-size: .75em;
