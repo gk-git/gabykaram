@@ -46,6 +46,10 @@
     @media (min-width: 767px) {
       width: 200px;
       height: 200px;
+      .gatsby-image-wrapper {
+        width: 200px;
+        height: 200px;
+      }
     }
     img {
       pointer-events: none;
