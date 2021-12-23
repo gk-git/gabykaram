@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Intro from "../components/Global/Intro"
 import Layout from "../components/Global/Layout"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 export const query = graphql
   `
     query SITE_INDEX_QUERY {
@@ -26,9 +26,11 @@ export const query = graphql
                     published
                     featuredImage {
                       childImageSharp {
-                        fluid(maxWidth: 1200) {
-                          ...GatsbyImageSharpFluid
-                        }
+                        gatsbyImageData(
+                          layout: FIXED
+                          placeholder: BLURRED
+                          formats: [AUTO, WEBP, AVIF]
+                        )
                       }
                     }
                 }
@@ -57,7 +59,7 @@ export default function BlogPage ({ data }) {
                 <Link key={excerpt} to={fields.slug} className="blog-post-item">
                   {
                     featuredImgFluid ? (
-                      <Img fluid={featuredImgFluid} className="blog-feature-image" />
+                      <GatsbyImage image={featuredImgFluid} className="blog-feature-image" alt={frontmatter.title} />
                     ): <StaticImage src="../assets/images/gaby-logo.png" alt="Gaby's Logo" className="blog-feature-image blog-feature-image--default"
                                     placeholder="blurred"
                                    
