@@ -11,5 +11,6 @@ In terms of the meaning of the word buy, after you buy an item, it would be your
 
 As a short answer, you rent a domain name for a set amount of years because the owners of the domain names don't like to sell their properties.
 
-To know more check the following article on [Why are domain names rented for a period of time and not purchased? How can someone be 100% owner of their domain?](https://domsite.io/why-are-domain-names-rented-how-to-be-owner/) 
-
+```
+To learn more, check the following article on [Why are domain names rented for a while and not purchased? How can someone be 100% owner of their domain?](https://domsite.io/why-are-domain-names-rented-how-to-be-owner/) 
+```
