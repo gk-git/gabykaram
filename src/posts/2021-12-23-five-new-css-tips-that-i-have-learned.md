@@ -2,6 +2,7 @@
 title: "Five new CSS Tips that I have learned."
 date: 2021-12-23
 published: true
+featuredImage: ../assets/images/blog/debugging-css-cover-book.jpg
 ---
 
 In the last two days, I read the Debugging CSS book by Ahmad Shadeed, reached the 4th chapter, and learned the following six new tips.
