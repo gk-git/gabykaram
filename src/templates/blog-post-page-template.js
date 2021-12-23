@@ -34,8 +34,8 @@ const BlogSinglePostPage =  ({ data }) => {
       <div className="navigation">
         <button className="navigation__back" onClick={handleBackButtonClick}>Go Back</button>
       </div>
-      <h1>{frontmatter.title}</h1>
       <p className="date">{frontmatter.date}</p>
+      <h1>{frontmatter.title}</h1>
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   )

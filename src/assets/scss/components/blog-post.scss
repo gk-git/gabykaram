@@ -8,6 +8,7 @@
         display: block;
         width: 100%;
         text-align: left;
+        margin-bottom: 1.5em;
 
         &:hover {
             animation: moveLeft 2s;
@@ -21,5 +22,10 @@
 
     .date {
         font-size: 1rem;
+        color: var(--secondary-color);
+        margin-bottom: 0;
+    }
+    h1 {
+        margin-top: 0;
     }
 }
