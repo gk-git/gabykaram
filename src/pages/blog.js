@@ -27,7 +27,7 @@ export const query = graphql
                     featuredImage {
                       childImageSharp {
                         gatsbyImageData(
-                          layout: FIXED
+                          width: 200
                           placeholder: BLURRED
                           formats: [AUTO, WEBP, AVIF]
                         )
@@ -53,18 +53,20 @@ export default function BlogPage ({ data }) {
         
           <div>
             {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => {
-              let featuredImgFluid =frontmatter?.featuredImage?.childImageSharp?.fluid ||undefined;
+              let featuredImgFluid =frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData ||undefined;
   
               return (
                 <Link key={excerpt} to={fields.slug} className="blog-post-item">
-                  {
-                    featuredImgFluid ? (
-                      <GatsbyImage image={featuredImgFluid} className="blog-feature-image" alt={frontmatter.title} />
-                    ): <StaticImage src="../assets/images/gaby-logo.png" alt="Gaby's Logo" className="blog-feature-image blog-feature-image--default"
-                                    placeholder="blurred"
-                                   
-                    />
-                  }
+                  <div className="blog-feature-image">
+                    {
+                      featuredImgFluid ? (
+                        <GatsbyImage image={featuredImgFluid}  alt={frontmatter.title} />
+                      ): <StaticImage src="../assets/images/gaby-logo.png" alt="Gaby's Logo" className="blog-feature-image blog-feature-image--default"
+                                      placeholder="blurred"
+    
+                      />
+                    }
+                  </div>
                   <h2 className="post-title">{frontmatter.title}</h2>
                   <p className="post-date">{frontmatter.date}</p>
                   <p className="post-excerpt">{excerpt}</p>
