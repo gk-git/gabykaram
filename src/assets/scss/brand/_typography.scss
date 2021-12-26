@@ -35,20 +35,20 @@ p, ul, ol, #footnotes {
 a, a:visited, img, input, a:visited:hover {
   transition: color .3s,opacity .3s,background .3s;
   color: var(--link-color);
-  display: inline-block;
+  display: inline;
   text-decoration: none;
 }
 
 a:active {
-  color: #222
+  color: var(--link-color-visited)
 }
 
 a:visited {
-  color: #c66
+  color: var(--link-color-visited)
 }
 
 a:hover {
-  color: #666
+  color: var(--link--hover-color)
 }
 
 h1 {
