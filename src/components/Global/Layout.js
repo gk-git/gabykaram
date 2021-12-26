@@ -23,20 +23,24 @@ const Layout = ({
   const parallaxPlaceholder = useRef()
   const footer = useRef()
   const windowSize = useWindowSize()
-  
+  let ts
   
   useEffect(() => {
-    
-    "wheel".split(' ').forEach(event => {
-      window.addEventListener(event, handleScrollOverFixedFooter);
   
-    })
+    "wheel".split(" ").forEach(event => {
+      window.addEventListener(event, handleScrollOverFixedFooter)
     
+    })
+    document.querySelector("footer").addEventListener("touchstart", handleTouchScrollOverFixedFooterStart)
+    document.querySelector("footer").addEventListener("touchmove", handleTouchScrollOverFixedFooterEnd)
     return () => {
-      "wheel".split(' ').forEach(event => {
-        window.removeEventListener(event, handleScrollOverFixedFooter);
+      "wheel".split(" ").forEach(event => {
+        window.removeEventListener(event, handleScrollOverFixedFooter)
       })
-    };
+      document.querySelector("footer").removeEventListener("touchstart", handleTouchScrollOverFixedFooterStart)
+      document.querySelector("footer").removeEventListener("touchmove", handleTouchScrollOverFixedFooterEnd)
+    
+    }
   });
   
   const checkFooterHeight = () => {
@@ -69,19 +73,30 @@ const Layout = ({
   const handleScrollOverFixedFooter = (event) => {
     if (event.defaultPrevented) {
       // This is not a passive event
-      event.preventDefault();
-      
+      event.preventDefault()
     }
-    document.querySelector('main').scrollTop += event?.originalEvent?.deltaY || 0;
+    document.querySelector("body").scrollTop += event?.deltaY || 0
   }
- 
+  
+  const handleTouchScrollOverFixedFooterStart = (event) => {
+    if (event?.touches[0]?.clientY) {
+      ts = event.touches[0].clientY
+    }
+  }
+  
+  const handleTouchScrollOverFixedFooterEnd = (event) => {
+    const te = event.changedTouches[0].clientY
+    if (ts < te) {
+      document.querySelector("body").scrollTop -= 8
+    }
+  }
   
   const onScroll = () => {
     setState({
       ...state,
       placeholderTop: Math.round(parallaxPlaceholder.current.getBoundingClientRect().top)
     })
-    requestTick();
+    requestTick()
   }
   
   const requestTick = () => {
