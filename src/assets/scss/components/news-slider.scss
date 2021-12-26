@@ -83,12 +83,18 @@
     }
 
     .ticker {
-      &__element .item__content {
-        margin-right: 100px;
-        padding-right: 100px;
 
-        p {
-          line-height: 1.4;
+      &__element {
+        &:last-child {
+          opacity: 0;
+        }
+        .item__content {
+          margin-right: 100px;
+          padding-right: 100px;
+
+          p {
+            line-height: 1.4;
+          }
         }
       }
     }
