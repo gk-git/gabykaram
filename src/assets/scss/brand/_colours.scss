@@ -1,5 +1,6 @@
 :root {
   --main-color: hsl(308deg 31% 35%);
+  --main-darker-color: hsl(285deg 31% 35%);
   --secondary-color: hsl(60deg 100% 70%);
   --text-color: #fff;
 
@@ -7,6 +8,7 @@
   --secondary-bg-color: hsl(60deg 100% 70%);
 
 
+  --main-bg-color--20: hsl(308deg 31% 35%/20%);
   --main-bg-color--60: hsl(308deg 31% 35%/60%);
   --secondary-bg-color--20: hsl(60deg 100% 70%/ 20%);
   --secondary-bg-color--40: hsl(60deg 100% 70%/ 40%);

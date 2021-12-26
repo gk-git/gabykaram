@@ -12,7 +12,8 @@ const Layout = ({
                   showIntro = false,
                   introComponent,
                   children,
-                  className =''
+                  isSinglePost = false,
+                  className = ""
                 }) => {
   const [state, setState] = useState({
     placeholderTop: undefined,
@@ -124,12 +125,21 @@ const Layout = ({
           showIntro && introComponent
         }
       </header>
-      
-      <main className="content invert">
-        <div id="content">
-          {children}
-        </div>
-      
+  
+      <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
+        {
+          !isSinglePost ? (
+            <div id="content">
+              {children}
+            </div>
+          ) : (
+            <>
+              {children}
+            </>
+          )
+        }
+  
+  
       </main>
       <div className="parallax-placeholder" ref={parallaxPlaceholder} />
       <footer ref={footer}>

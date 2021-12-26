@@ -9,6 +9,13 @@ main.content {
   background: var(--main-bg-color);
   color: var(--text-color);
 
+  &.single-post {
+    padding: 0;
+    #content {
+      padding: 2rem 1rem;
+    }
+  }
+
   #content {
     max-width: 867px;
     margin: auto;
