@@ -1,9 +1,17 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "name": "gabykaram",
+  "description": "Gaby Karam - Full Stack Developer & Digital Producer",
+  "version": "1.0",
+  "license": "MIT",
+  "homepage": "https://gabykaram.com",
+  "keywords": [
+    "CSS",
+    "HTML",
+    "Gatsby",
+    "React",
+    "Portfolio"
+  ],
+  "author": "Gaby Karam",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
