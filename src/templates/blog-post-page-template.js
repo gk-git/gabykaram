@@ -1,6 +1,7 @@
 import { graphql, navigate } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React, { useEffect } from "react"
+import Helmet from "react-helmet"
 import Intro from "../components/Global/Intro"
 import Layout from "../components/Global/Layout"
 import NewsSlider from "../components/NewsSlider"
@@ -12,6 +13,7 @@ export const query = graphql
                 fields: { slug: { eq: $slug } }
             ){
                 body
+                excerpt(pruneLength: 250)
                 frontmatter {
                     title
                     date(formatString: "Do MMMM YYYY")
@@ -44,7 +46,7 @@ export const query = graphql
   `
 
 const BlogSinglePostPage =  ({ data }) => {
-  const { frontmatter, body } = data.mdx
+  const { frontmatter, body, excerpt } = data.mdx
   const blogPosts = data.allMdx.nodes.map(blog => {
     return {
       id: blog.id,
@@ -67,9 +69,16 @@ const BlogSinglePostPage =  ({ data }) => {
     <Layout
       showIntro={true}
       introComponent={<Intro />}
-      className={'blog-post'}
+      className={"blog-post"}
       isSinglePost={true}
     >
+      <Helmet title={`${frontmatter.title} | Gaby Karam`} defer={false}>
+      </Helmet>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta name="description"
+              content={excerpt} />
+      </Helmet>
       <div id="content">
         <div className="navigation">
           <button className="navigation__back" onClick={handleBackButtonClick}>Go Back</button>
