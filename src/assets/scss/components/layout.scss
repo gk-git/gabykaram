@@ -14,7 +14,7 @@ header {
   z-index: 1;
 }
 footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   z-index: 5;
   overflow: hidden;
