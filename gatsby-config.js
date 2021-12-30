@@ -109,22 +109,22 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        disableOnDev: true,
-        reportOnly: true, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
-        mergeScriptHashes: false,
-        mergeStyleHashes: false,
-        directives: {
-          'script-src': `'self' 'unsafe-inline' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`,
-          'style-src': `'self' 'unsafe-inline'`,
-          'img-src': `'self' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`,
-          'font-src': `'self' data:`,
-          'connect-src': `'self' https://www.google-analytics.com`
-        },
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-csp`,
+    //   options: {
+    //     disableOnDev: true,
+    //     reportOnly: true, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
+    //     mergeScriptHashes: false,
+    //     mergeStyleHashes: false,
+    //     directives: {
+    //       'script-src': `'self' 'unsafe-inline' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`,
+    //       'style-src': `'self' 'unsafe-inline'`,
+    //       'img-src': `'self' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`,
+    //       'font-src': `'self' data:`,
+    //       'connect-src': `'self' https://www.google-analytics.com`
+    //     },
+    //   }
+    // },
     ...plugins
   ]
 }
