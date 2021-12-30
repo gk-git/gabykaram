@@ -1,0 +1,7 @@
+[[headers]]
+    for = "/*"
+        [headers.values]
+            X-Frame-Options = "SAMEORIGIN"
+            X-XSS-Protection = "1; mode=block"
+            X-Content-Type-Options = "nosniff"
+            Content-Security-Policy = "default-src 'self' www.googletagmanager.com googletagmanager.com www.google-analytics.com cloudfront.net *.cloudfront.net; frame-ancestors 'self'; form-action 'self'"
