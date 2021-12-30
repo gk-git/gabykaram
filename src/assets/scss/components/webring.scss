@@ -36,13 +36,20 @@
   .batata {
     display: inline-block;
     min-width: 40px;
+    position: relative;
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain !important;
+    }
   }
 
   .harra {
     position: absolute;
-    transform: translate(-10%, -70%);
-    width: 48px;
+    transform: translate(-2%, -74%);
+    width: 40px;
     z-index: -1;
+
   }
 
   @media screen and (min-width: 450px) {
