@@ -109,6 +109,16 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        mergeScriptHashes: false,
+        mergeStyleHashes: false,
+        directives: {
+          'script-src': `'self' 'unsafe-inline' data: www.googletagmanager.com`,
+        },
+      },
+    },
     ...plugins
   ]
 }
