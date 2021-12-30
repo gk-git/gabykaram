@@ -26,11 +26,23 @@
 
   &__picture {
     height: 100px;
-
-
-    grid-area: picture;
     width: 100%;
+    grid-area: picture;
     text-align: center;
+
+    .desktop {
+      display: none;
+    }
+
+    @media all and (min-width: 767px) {
+      .mobile {
+        display: none;
+      }
+      .desktop {
+        display: inline-block;
+      }
+    }
+
     .gatsby-image-wrapper {
       width: 100px;
       height: 100px;
@@ -39,6 +51,7 @@
       overflow: hidden;
 
     }
+
     @media (min-width: 500px) {
       width: 100px;
       margin-right: 2em;

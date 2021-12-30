@@ -1,11 +1,45 @@
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 const Intro = () => {
+  const data = useStaticQuery(graphql`
+      query ProfileImageQuery {
+          profileImageMobile: file(relativePath: {eq: "profile.png"}) {
+              childImageSharp {
+                  gatsbyImageData(
+                      formats: WEBP
+                      placeholder: BLURRED
+                      quality: 100
+                      width: 100
+                      webpOptions: {quality: 100}
+                      breakpoints: [500, 767]
+                  )
+              }
+          }
+          profileImageNotMobile: file(relativePath: {eq: "profile.png"}) {
+              childImageSharp {
+                  gatsbyImageData(
+                      formats: WEBP
+                      placeholder: BLURRED
+                      quality: 100
+                      width: 200
+                      webpOptions: {quality: 100}
+                      breakpoints: [500, 767]
+                  )
+              }
+          }
+      }
+  `)
+
   const [state, setState] = useState({
     greet: "Good Morning",
     isIntroOpenOnMobile: false
   })
+  
+  const profileImageMobile = getImage(data.profileImageMobile)
+  const profileImageNotMobile = getImage(data.profileImageNotMobile)
+  
   useEffect(() => {
     const myDate = new Date()
     let hrs = myDate.getHours()
@@ -37,10 +71,17 @@ const Intro = () => {
     <div className="intro">
       <div className="intro__content">
         <div className="intro__picture">
-          <StaticImage src="../../assets/images/profile.png" alt="Gaby's face photo"
+          <GatsbyImage  image={profileImageMobile} src="../../assets/images/profile.png" className="mobile" alt="Gaby's face photo"
                        placeholder="blurred"
+                       loading="eager"
+                       breakpoints={[100, 200]}
                        width={200}
-                       height={200}
+          />
+          <GatsbyImage  image={profileImageNotMobile} src="../../assets/images/profile.png" className="desktop" alt="Gaby's face photo"
+                       placeholder="blurred"
+                       loading="eager"
+                       breakpoints={[100, 200]}
+                       width={200}
           />
         </div>
         <p>
