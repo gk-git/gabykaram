@@ -40,16 +40,15 @@
 
   .harra {
     position: absolute;
-    transform: translate(-2%, -70%);
-    width: 40px;
-    z-index: 32;
+    transform: translate(-10%, -70%);
+    width: 48px;
+    z-index: -1;
   }
 
   @media screen and (min-width: 450px) {
 
     .harra {
-      transform: translate(-8%, -72%);
-      width: fit-content;
+      transform: translate(-15%, -72%);
     }
   }
 
