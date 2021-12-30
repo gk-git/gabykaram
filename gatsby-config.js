@@ -121,7 +121,7 @@ module.exports = {
           'style-src': `'self' 'unsafe-inline'`,
           'img-src': `'self' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`,
           'font-src': `'self' data:`,
-          'connect-src': `'self' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`
+          'connect-src': `'self' https://www.google-analytics.com`
         },
       }
     },
