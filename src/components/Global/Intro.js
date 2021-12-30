@@ -39,8 +39,8 @@ const Intro = () => {
         <div className="intro__picture">
           <StaticImage src="../../assets/images/profile.png" alt="Gaby's face photo"
                        placeholder="blurred"
-                       width={300}
-                       height={300}
+                       width={200}
+                       height={200}
           />
         </div>
         <p>
