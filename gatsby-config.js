@@ -112,12 +112,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-csp`,
       options: {
+        disableOnDev: true,
+        reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
         mergeScriptHashes: false,
         mergeStyleHashes: false,
         directives: {
-          'script-src': `'self' 'unsafe-inline' data: www.googletagmanager.com`,
+          'script-src': `'self' 'unsafe-inline' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`,
+          'style-src': `'self' 'unsafe-inline'`,
+          'img-src': `'self' data: www.googletagmanager.com googletagmanager.com www.google-analytics.com`,
+          'font-src': `'self' data:`,
         },
-      },
+      }
     },
     ...plugins
   ]
