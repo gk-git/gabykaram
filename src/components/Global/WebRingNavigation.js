@@ -17,14 +17,12 @@ const WebRingNavigation = () => {
           <i className="icon-arrow-left"/>
         </a>
         <a rel="noopener noreferrer" title="Batata Harra Webring" aria-label="visit Batata Harra Dot Guru"
-           className="text-decoration-none m-1" href="https://batataharra.guru" target="_blank">
-              <span>
+           href="https://batataharra.guru" target="_blank">
                 <img className="harra" src={FlameGif} alt="Flame" />
                  <StaticImage className="batata" src="../../assets/images/batata.webp" alt="Gaby's face photo"
                               placeholder="blurred"
                               width={30}
                  />
-              </span>
         </a>
         <a title={`Visit ${webRingMembers.members[nextSiteIndex]?.url}`} aria-label={`visit ${webRingMembers.members[nextSiteIndex]?.name} Dot Com`}
            href={webRingMembers.members[nextSiteIndex]?.url}>

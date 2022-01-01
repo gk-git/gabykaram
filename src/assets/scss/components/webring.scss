@@ -35,7 +35,6 @@
 
   .batata {
     display: inline-block;
-    min-width: 40px;
     position: relative;
     img {
       width: auto;
@@ -46,8 +45,8 @@
 
   .harra {
     position: absolute;
-    transform: translate(-2%, -74%);
-    width: 40px;
+    transform: translate(0, -85%);
+    width: 24px;
     z-index: -1;
 
   }
@@ -55,7 +54,7 @@
   @media screen and (min-width: 450px) {
 
     .harra {
-      transform: translate(-15%, -72%);
+      transform: translate(20%, -85%);
     }
   }
 
