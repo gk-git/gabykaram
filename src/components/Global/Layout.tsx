@@ -6,18 +6,20 @@ import AppContext from "../../context/AppContext"
 import useWindowSize from "../../hooks/useWindowSize"
 import Footer from "./Footer"
 import Navigation from "./Navigation/Navigation"
+import { LayoutProps } from "../../types/components"
 
 const Layout = ({
                   navigationProps,
-                  showIntro = false,
+                  showIntro,
                   introComponent,
                   children,
-                  isSinglePost = false,
-                  className = ""
-                }) => {
+                  isSinglePost,
+                  className,
+                  seo
+                }: LayoutProps) => {
   const { navigation } = useContext(AppContext)
   const parallaxPlaceholder = useRef()
-  const footer = useRef()
+  const footer = useRef<HTMLDivElement>()
   const windowSize = useWindowSize()
   
   
@@ -80,5 +82,14 @@ const Layout = ({
     </div>
   )
 }
-
+Layout.defaultProps = {
+  navigationProps: {
+    isTransparent: false,
+    showIntro: false,
+    introComponent: null,
+    isSinglePost: false,
+    className: "",
+    seo: null
+  }
+}
 export default Layout
