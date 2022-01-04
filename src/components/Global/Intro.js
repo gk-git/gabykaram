@@ -1,4 +1,4 @@
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
