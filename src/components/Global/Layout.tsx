@@ -7,7 +7,7 @@ import useWindowSize from "../../hooks/useWindowSize"
 import Footer from "./Footer"
 import Navigation from "./Navigation/Navigation"
 import { LayoutProps } from "../../types/components"
-import { config } from "../../config"
+import getConfig  from "../../config"
 
 const Layout = ({
                   navigationProps,
@@ -18,6 +18,7 @@ const Layout = ({
                   className,
                   seo
                 }: LayoutProps) => {
+  const config = getConfig()
   const { navigation } = useContext(AppContext)
   const parallaxPlaceholder = useRef()
   const footer = useRef<HTMLDivElement>()
