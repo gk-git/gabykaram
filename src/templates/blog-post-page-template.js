@@ -71,14 +71,11 @@ const BlogSinglePostPage =  ({ data }) => {
       introComponent={<Intro />}
       className={"blog-post"}
       isSinglePost={true}
+      seo={{
+        title:`${frontmatter.title} | Gaby Karam`,
+        description: excerpt
+      }}
     >
-      <Helmet title={`${frontmatter.title} | Gaby Karam`} defer={false}>
-      </Helmet>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <meta name="description"
-              content={excerpt} />
-      </Helmet>
       <div id="content">
         <div className="navigation">
           <button className="navigation__back" onClick={handleBackButtonClick}>Go Back</button>
