@@ -16,12 +16,13 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    siteUrl,
+    siteUrl: `https://gabykaram.com`,
     title: `Gaby Karam | Digital Producer & Developer`,
     description: `I don’t find myself defined by who I am currently. I define myself by what I am looking to be.`,
   },
   plugins: [
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-advanced-sitemap`,
