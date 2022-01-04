@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-offline`,
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-advanced-sitemap`,
