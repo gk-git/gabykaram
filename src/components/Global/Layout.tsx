@@ -7,6 +7,7 @@ import useWindowSize from "../../hooks/useWindowSize"
 import Footer from "./Footer"
 import Navigation from "./Navigation/Navigation"
 import { LayoutProps } from "../../types/components"
+import { config } from "../../config"
 
 const Layout = ({
                   navigationProps,
@@ -21,8 +22,8 @@ const Layout = ({
   const parallaxPlaceholder = useRef()
   const footer = useRef<HTMLDivElement>()
   const windowSize = useWindowSize()
-  
-  
+
+
   const checkFooterHeight = () => {
     if (footer.current.offsetHeight > window.innerHeight) { // Check if footer is taller than window height
       footer.current.style.bottom = "unset"
@@ -38,7 +39,7 @@ const Layout = ({
   useEffect(() => {
     checkFooterHeight()
   }, [windowSize])
-  
+
   return (
     <div className={`default-layout ${className} ${navigation.isOpen ? "open" : "close"}`}>
       <Helmet
@@ -46,12 +47,10 @@ const Layout = ({
           lang: "en"
         }}
       />
-      <Helmet title="Gaby Karam | Digital Producer & Developer" defer={false}>
-      </Helmet>
       <Helmet>
         <meta charSet="utf-8" />
-        <meta name="description"
-              content="I don’t find myself defined by who I am currently. I define myself by what I am looking to be." />
+        <title>{seo?.title || config.defaultSeo.title}</title>
+        <meta name="description" content={seo?.description || config.defaultSeo.description} />
       </Helmet>
       <header>
         <Navigation {...navigationProps} />
@@ -59,7 +58,7 @@ const Layout = ({
           showIntro && introComponent
         }
       </header>
-  
+
       <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
         {
           !isSinglePost ? (
