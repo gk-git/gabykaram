@@ -11,9 +11,12 @@ export default function PortfolioPage () {
       }}
       showIntro={true}
       introComponent={<Intro />}
+      seo={{
+        title: "Portfolio | Gaby Karam"
+      }}
     >
       <h1>Let's build something that make a difference.</h1>
-      
+
       <section>
         <div className="projects">
           <div className="project">

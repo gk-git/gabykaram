@@ -25,6 +25,9 @@ export default function LabPage() {
     <Layout
       showIntro={true}
       introComponent={<Intro />}
+      seo={{
+        title: "Labs | Gaby Karam",
+      }}
     >
       <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
         <div>
@@ -33,7 +36,7 @@ export default function LabPage() {
           </p>
           <p>
             For now you here is a list of cool code that I wrote:
-            
+
           </p>
           <p>
             <ul>

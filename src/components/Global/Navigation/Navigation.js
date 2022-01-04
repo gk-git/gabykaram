@@ -12,19 +12,15 @@ const Navigation = ({ isTransparent }) => {
   const closeMenu = () => {
    setTimeout(() => { navigation.closeMenu()}, 50)
   }
-  const handleNavigationClick = () => {
-    if(navigation.isOpen) {
-      closeMenu()
-    }
-  }
+ 
   return (
     <nav id="main-navigation" className={`main-navigation ${navigation.isOpen ? "expanded" : ""} `} role="navigation"
          >
       <div className="main-navigation__handle__wrapper">
-        <button onClick={handleMenuClick} role="button"
+        <button onClick={handleMenuClick}
               className={`main-navigation__handle ${isTransparent ? "transparent" : ""}`} title="Menu (Esc)"
               data-icon="\e9bd">
-          <span></span>
+          <span/>
         </button>
         
       </div>

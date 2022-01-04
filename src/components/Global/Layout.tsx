@@ -1,31 +1,34 @@
 import "normalize.css/normalize.css"
-import React, { useContext, useEffect, useRef, useState } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import Helmet from "react-helmet"
 import "../../assets/scss/main.scss"
 import AppContext from "../../context/AppContext"
 import useWindowSize from "../../hooks/useWindowSize"
 import Footer from "./Footer"
 import Navigation from "./Navigation/Navigation"
+import { LayoutProps } from "../../types/components"
+import { config } from "../../config"
 
 const Layout = ({
                   navigationProps,
-                  showIntro = false,
+                  showIntro,
                   introComponent,
                   children,
-                  isSinglePost = false,
-                  className = ""
-                }) => {
+                  isSinglePost,
+                  className,
+                  seo
+                }: LayoutProps) => {
   const { navigation } = useContext(AppContext)
   const parallaxPlaceholder = useRef()
-  const footer = useRef()
+  const footer = useRef<HTMLDivElement>()
   const windowSize = useWindowSize()
-  
-  
+
+
   const checkFooterHeight = () => {
     if (footer.current.offsetHeight > window.innerHeight) { // Check if footer is taller than window height
       footer.current.style.bottom = "unset"
       footer.current.style.top = "0px"
-    } else { // If footer height is not greater than window height, bottom is 0 for normal parllax
+    } else { // If footer height is not greater than window height, bottom is 0 for normal parallax
       footer.current.style.top = "unset"
       footer.current.style.bottom = "0px"
     }
@@ -36,7 +39,7 @@ const Layout = ({
   useEffect(() => {
     checkFooterHeight()
   }, [windowSize])
-  
+
   return (
     <div className={`default-layout ${className} ${navigation.isOpen ? "open" : "close"}`}>
       <Helmet
@@ -44,12 +47,10 @@ const Layout = ({
           lang: "en"
         }}
       />
-      <Helmet title="Gaby Karam | Digital Producer & Developer" defer={false}>
-      </Helmet>
       <Helmet>
         <meta charSet="utf-8" />
-        <meta name="description"
-              content="I don’t find myself defined by who I am currently. I define myself by what I am looking to be." />
+        <title>{seo?.title || config.defaultSeo.title}</title>
+        <meta name="description" content={seo?.description || config.defaultSeo.description} />
       </Helmet>
       <header>
         <Navigation {...navigationProps} />
@@ -57,7 +58,7 @@ const Layout = ({
           showIntro && introComponent
         }
       </header>
-  
+
       <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
         {
           !isSinglePost ? (
@@ -80,5 +81,14 @@ const Layout = ({
     </div>
   )
 }
-
+Layout.defaultProps = {
+  navigationProps: {
+    isTransparent: false,
+    showIntro: false,
+    introComponent: null,
+    isSinglePost: false,
+    className: "",
+    seo: null
+  }
+}
 export default Layout

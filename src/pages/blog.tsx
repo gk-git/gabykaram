@@ -1,9 +1,9 @@
 import { graphql, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Intro from "../components/Global/Intro"
 import Layout from "../components/Global/Layout"
-import { GatsbyImage } from "gatsby-plugin-image"
+
 export const query = graphql
   `
     query SITE_INDEX_QUERY {
@@ -47,14 +47,17 @@ export default function BlogPage ({ data }) {
     <Layout
       showIntro={true}
       introComponent={<Intro />}
+      seo={{
+        title: "Blog | Gaby Karam",
+      }}
     >
       {
         data.allMdx.nodes.length > 0 ? (
-        
+
           <div>
             {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => {
               let featuredImgFluid =frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData ||undefined;
-  
+
               return (
                 <Link key={excerpt} to={fields.slug} className="blog-post-item">
                   <div className="blog-feature-image">
@@ -63,7 +66,7 @@ export default function BlogPage ({ data }) {
                         <GatsbyImage image={featuredImgFluid}  alt={frontmatter.title} />
                       ): <StaticImage src="../assets/images/gaby-logo.png" alt="Gaby's Logo" className="blog-feature-image blog-feature-image--default"
                                       placeholder="blurred"
-    
+
                       />
                     }
                   </div>
@@ -84,7 +87,7 @@ export default function BlogPage ({ data }) {
           </div>
         )
       }
-    
+
     </Layout>
   )
 }
