@@ -8,7 +8,6 @@ const year = dateObj.getUTCFullYear();
 
 const scriptHash = `${year}-${month}-${day}`;
 export default function HTML(props) {
-  console.log('props', props)
   return (
     <html {...props.htmlAttributes}>
     <head>
