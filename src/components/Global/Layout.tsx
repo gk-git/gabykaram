@@ -1,5 +1,5 @@
 import "normalize.css/normalize.css"
-import React, { useContext, useEffect, useRef, useState } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import Helmet from "react-helmet"
 import "../../assets/scss/main.scss"
 import AppContext from "../../context/AppContext"
@@ -25,7 +25,7 @@ const Layout = ({
     if (footer.current.offsetHeight > window.innerHeight) { // Check if footer is taller than window height
       footer.current.style.bottom = "unset"
       footer.current.style.top = "0px"
-    } else { // If footer height is not greater than window height, bottom is 0 for normal parllax
+    } else { // If footer height is not greater than window height, bottom is 0 for normal parallax
       footer.current.style.top = "unset"
       footer.current.style.bottom = "0px"
     }
