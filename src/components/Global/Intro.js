@@ -1,6 +1,6 @@
 import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import React, { useEffect, useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
 const Intro = () => {
   const data = useStaticQuery(graphql`
@@ -71,6 +71,7 @@ const Intro = () => {
     <div className="intro">
       <div className="intro__content">
         <div className="intro__picture">
+          <Link to="/">
           <GatsbyImage  image={profileImageMobile} src="../../assets/images/profile.png" className="mobile" alt="Gaby's face photo"
                        placeholder="blurred"
                        loading="eager"
@@ -83,6 +84,7 @@ const Intro = () => {
                        breakpoints={[100, 200]}
                        width={200}
           />
+          </Link>
         </div>
         <p>
           <span className="intro__title">{state.greet}</span>
