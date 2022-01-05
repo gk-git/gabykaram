@@ -40,6 +40,11 @@ module.exports = {
         theme_color: `#753e6e`,
         display: `standalone`,
         icon: `src/assets/images/gaby-logo.png`,
+        icon_options: {
+          // For all the options available,
+          // please see the section "Additional Resources" below.
+          purpose: `any maskable`,
+        },
       },
     },
     {
