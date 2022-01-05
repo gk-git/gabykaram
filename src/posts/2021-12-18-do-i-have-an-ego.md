@@ -2,6 +2,7 @@
 title: "Do I Have An Ego"
 date: 2021-12-18
 published: false
+featured: false
 ---
 
 Yesterday some of my friends had told me that I have a strong ego; at first, I was surprised because it was the first time someone said that to me.

@@ -2,6 +2,7 @@
 title: "The Myth About Domain Names"
 date: 2021-12-09
 published: true
+featured: false
 featuredImage: ../assets/images/blog/domain.jpg
 ---
 

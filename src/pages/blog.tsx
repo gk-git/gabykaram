@@ -13,9 +13,9 @@ export const query = graphql
                 description
             }
         }
-        allMdx(
+        blogPostsFeautured: allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { published: { eq: true } } }
+            filter: { frontmatter: { published: { eq: true },  featured:{eq: true} } }
         ) {
             nodes {
                 id
@@ -24,6 +24,34 @@ export const query = graphql
                     title
                     date(formatString: "Do MMMM YYYY"),
                     published
+                    featured
+                    featuredImage {
+                        childImageSharp {
+                            gatsbyImageData(
+                                width: 200
+                                placeholder: BLURRED
+                                formats: [AUTO, WEBP, AVIF]
+                            )
+                        }
+                    }
+                }
+                fields {
+                    slug
+                }
+            }
+        }
+        blogPostsRegular: allMdx(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { published: { eq: true }, featured:{ne: true} } }
+        ) {
+            nodes {
+                id
+                excerpt(pruneLength: 250)
+                frontmatter {
+                    title
+                    date(formatString: "Do MMMM YYYY"),
+                    published
+                    featured
                     featuredImage {
                       childImageSharp {
                         gatsbyImageData(
@@ -52,10 +80,10 @@ export default function BlogPage ({ data }) {
       }}
     >
       {
-        data.allMdx.nodes.length > 0 ? (
+        data.blogPostsFeautured.nodes.length > 0 || data.blogPostsRegular.length > 0? (
 
           <div>
-            {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => {
+            {[...data.blogPostsFeautured.nodes, ...data.blogPostsRegular.nodes].map(({ excerpt, frontmatter, fields }) => {
               let featuredImgFluid =frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData ||undefined;
 
               return (
@@ -71,7 +99,7 @@ export default function BlogPage ({ data }) {
                     }
                   </div>
                   <h2 className="post-title">{frontmatter.title}</h2>
-                  <p className="post-date">{frontmatter.date}</p>
+                  <p className="post-date">{frontmatter.date}{frontmatter.featured ? ' - Featured': ''}</p>
                   <p className="post-excerpt">{excerpt}</p>
                 </Link>
               )
@@ -87,6 +115,7 @@ export default function BlogPage ({ data }) {
           </div>
         )
       }
+
 
     </Layout>
   )

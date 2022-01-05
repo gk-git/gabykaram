@@ -2,6 +2,7 @@
 title: "How To Use React Ticker To Create a Double Sliding News Bar"
 date: 2021-12-26
 published: false
+featured: false
 ---
 
 Showing news in flash or the latest post sliding style, then news ticker is a good option for your website. 

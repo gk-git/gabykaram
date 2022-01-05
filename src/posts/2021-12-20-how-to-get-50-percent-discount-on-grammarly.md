@@ -2,6 +2,7 @@
 title: "How To Get 50% Discount on Grammarly"
 date: 2021-12-20
 published: true
+featured: false
 ---
 
 From working with different marketing teams I was able to learn that usually a service would wants to grab users at any cost if the user didn't pass the first sales funnel.

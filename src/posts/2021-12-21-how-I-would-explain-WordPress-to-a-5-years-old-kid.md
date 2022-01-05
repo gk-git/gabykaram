@@ -2,6 +2,7 @@
 title: "How I Would Explain WordPress To A 5 Years Old Kid"
 date: 2021-12-21
 published: true
+featured: false
 ---
 
 Let's say that you say that you are an expert in your field. Can you explain to others who don't know what you do?

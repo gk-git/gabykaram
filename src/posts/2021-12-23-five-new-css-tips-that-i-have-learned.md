@@ -2,6 +2,7 @@
 title: "Five new CSS Tips that I have learned."
 date: 2021-12-23
 published: true
+featured: false
 featuredImage: ../assets/images/blog/debugging-css-cover-book.jpg
 ---
 
