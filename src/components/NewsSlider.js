@@ -74,7 +74,7 @@ export default function NewsSlider ({ news }) {
                           classNames="news-out"
                         >
                           <div>
-                            <h5 className="item__info__author">{activeNew.name}</h5>
+                            <p className="item__info__author">{activeNew.name}</p>
                             <span className="item__info__date">{activeNew.date}</span>
                           </div>
                         </CSSTransition>
