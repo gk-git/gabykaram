@@ -1,7 +1,6 @@
 import { graphql, navigate } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React, { useEffect } from "react"
-import Helmet from "react-helmet"
 import Intro from "../components/Global/Intro"
 import Layout from "../components/Global/Layout"
 import NewsSlider from "../components/NewsSlider"
