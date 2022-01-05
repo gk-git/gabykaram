@@ -16,7 +16,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    siteUrl: `https://gabykaram.com`,
+    siteUrl: siteUrl,
     title: `Gaby Karam | Digital Producer & Developer`,
     description: `I don’t find myself defined by who I am currently. I define myself by what I am looking to be.`,
   },
@@ -30,6 +30,18 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`, // Needed for dynamic images
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gaby Karam | Digital Producer & Developer`,
+        short_name: `Gaby Karam`,
+        start_url: `/`,
+        background_color: `#ffff66`,
+        theme_color: `#753e6e`,
+        display: `standalone`,
+        icon: `src/assets/images/gaby-logo.png`,
+      },
+    },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
