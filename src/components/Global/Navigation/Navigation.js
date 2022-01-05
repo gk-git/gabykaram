@@ -61,7 +61,7 @@ const Navigation = ({ isTransparent }) => {
               <li>
                 <a href="https://www.linkedin.com/in/gabykaram/" title="Find me on linkedIn" rel="noreferrer" target="_blank"> LinkedIn</a></li>
               <li>
-                <a href="http://github.com/gk-git" title="Find me on GitHub" rel="noreferrer"> GitHub</a>
+                <a href="http://github.com/gk-git" title="Find me on GitHub" rel="noreferrer" target="_blank"> GitHub</a>
               </li>
               <li>
                 <a href="https://www.facebook.com/gaby.karam.gk/" title="Find me on Facebook" rel="noreferrer"
