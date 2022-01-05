@@ -1,7 +1,7 @@
 import { navigate } from "gatsby"
 import React from "react"
 
-export default function MarkdownLink (props) {
+export default function MarkdownLink ({ children, ...props }) {
   const handleLinkClick = (e) => {
     e.preventDefault()
     const { href } = props
@@ -14,6 +14,6 @@ export default function MarkdownLink (props) {
     }
   }
   return (
-    <a onClick={handleLinkClick} {...props} />
+    <a onClick={handleLinkClick} role="link" tabIndex={0} onKeyDown={handleLinkClick} {...props} >{children}</a>
   )
 }
