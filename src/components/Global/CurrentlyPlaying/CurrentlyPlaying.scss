@@ -93,6 +93,7 @@
           left: 0;
           right: 0;
           width: max-content;
+          max-width: 730px;
           margin: auto;
           grid-template-areas: "live . close" " album-cover primary-text primary-text" "album-cover secondary-text secondary-text" ". . . ";
           &__album-cover {
