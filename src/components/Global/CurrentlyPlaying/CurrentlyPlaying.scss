@@ -42,6 +42,9 @@
         border-radius: 50%;
         box-shadow: var(--box-shadow);
         background-color: hsl(60deg 100% 90%);;
+        @media all and (min-width: 767px) {
+          display: none;
+        }
       }
     }
 
