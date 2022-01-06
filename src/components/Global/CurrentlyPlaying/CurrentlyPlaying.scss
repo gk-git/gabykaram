@@ -92,6 +92,10 @@
       box-shadow: var(--box-shadow);
       margin: 12px;
 
+      img {
+        pointer-events: none;
+      }
+
       &.gatsby-image-wrapper--desktop {
         display: none;
       }
