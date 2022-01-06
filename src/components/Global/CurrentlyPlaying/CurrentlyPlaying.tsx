@@ -3,6 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
 import "./CurrentlyPlaying.scss"
 import useInterval from "../../../hooks/useInterval"
+import MusicNoteIcon from "./MusicNoteIcon"
 
 export default function CurrentlyPlaying() {
   const [state, setState] = useState({
@@ -96,11 +97,13 @@ export default function CurrentlyPlaying() {
                        loading="eager"
           />
           <div className={`currently-playing__circle  ${state.isPlaying ? "playing" : ""}`}>
-
+            <div className="currently-playing__circle--mobile">
+              <MusicNoteIcon />
+            </div>
           </div>
         </div>
       </div>
-      <svg>
+      <svg className="currently-playing__desktop-animation">
         <filter id="wavy">
           <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" seed="2">
             <animate attributeName="baseFrequency" dur="120s" values="0.02;0.05;0.02" repeatCount="indefinite">

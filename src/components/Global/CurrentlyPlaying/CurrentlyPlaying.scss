@@ -13,66 +13,82 @@
     }
   }
 
-  svg {
+  &__desktop-animation {
     position: absolute;
     top: -1000000px;
   }
 
   &__circle {
-    position: absolute;
-    width: 125px;
-    height: 125px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 222;
-    animation: rotating 150s linear infinite;
-    cursor: pointer;
-    filter: url('#wavy') blur(1px);
-    display: none;
+    display: block;
+    $self: &;
+
+    &--mobile {
+      display: none;
+    }
+
     &.playing {
-      display: block;
-    }
-    &:before, &:after {
-      content: '';
       position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-    }
+      bottom: 5px;
+      right: 5px;
+      cursor: pointer;
 
-    &:before {
-
-      border: 5px solid var(--main-bg-color);
-      border-radius: 50%;
-      box-shadow: 0 0 12.5px var(--secondary-bg-color), inset 0 0 12.5px var(--secondary-bg-color);
-      animation: animate 5s linear infinite;
-
-      @media (min-width: 767px) {
-        border: 10px solid var(--main-bg-color);
-        box-shadow: 0 0 25px var(--secondary-bg-color), inset 0 0 25px var(--secondary-bg-color);
+      #{$self}--mobile {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: var(--box-shadow);
+        background-color: hsl(60deg 100% 90%);;
       }
     }
 
-    &:after {
-      border: 5px solid var(--main-bg-color);
-      border-radius: 50%;
-      box-shadow: 0 0 2.5px var(--main-bg-color), inset 0 0 5px var(--main-bg-color);
-    }
-
     @media all and (min-width: 767px) {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       width: 250px;
       height: 250px;
+      z-index: 222;
+      animation: rotating 150s linear infinite;
+      cursor: pointer;
+      filter: url('#wavy') blur(1px);
+      &.playing {
+        display: block;
+      }
       &:before, &:after {
+        content: '';
+        position: absolute;
         top: 20px;
         left: 20px;
         right: 20px;
         bottom: 20px;
       }
-    }
 
+      &:before {
+        border: 5px solid var(--main-bg-color);
+        border-radius: 50%;
+        box-shadow: 0 0 12.5px var(--secondary-bg-color), inset 0 0 12.5px var(--secondary-bg-color);
+        animation: animate 5s linear infinite;
+
+        @media (min-width: 767px) {
+          border: 10px solid var(--main-bg-color);
+          box-shadow: 0 0 25px var(--secondary-bg-color), inset 0 0 25px var(--secondary-bg-color);
+        }
+      }
+
+      &:after {
+        border: 5px solid var(--main-bg-color);
+        border-radius: 50%;
+        box-shadow: 0 0 2.5px var(--main-bg-color), inset 0 0 5px var(--main-bg-color);
+      }
+
+    }
   }
 
   &__wrapper {
