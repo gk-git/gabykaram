@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
-import "./CurrentlyPlaying.scss"
 import useInterval from "../../../hooks/useInterval"
 import MusicNoteIcon from "./MusicNoteIcon"
+import LiveIcon from "./atoms/LiveIcon"
+import "./CurrentlyPlaying.scss"
 
 export default function CurrentlyPlaying() {
   const [state, setState] = useState({
     isDocumentVisible: true,
     isPlaying: false,
-    runSpotifyCall: false
+    album: null,
+    name: null,
+    artists: [],
+    external_urls: {
+      spotify: null
+    }
   })
 
   useEffect(()=>{
@@ -20,7 +26,7 @@ export default function CurrentlyPlaying() {
   })
   useInterval(() => {
     getPlayingData()
-  }, 10000)
+  }, 100000)
   useEffect(() => {
     if (window !== undefined) {
       setTimeout(getPlayingData, 4000)
@@ -70,12 +76,34 @@ export default function CurrentlyPlaying() {
       fetch(`https://wpshortcuts.mystagingwebsite.com/wp-json/spotify/v1/playing/1`)
         .then(response => response.json())
         .then(data => {
-          setState(prevState => (
-            {
-              ...prevState,
-              isPlaying: data.isPlaying
+          setState(prevState => {
+
+            if (data.isPlaying) {
+
+              debugger;
+              return {
+                ...prevState,
+                isPlaying: data.isPlaying,
+                album: data.data.album,
+                name: data.data.name,
+                artists: data.data.artists,
+                external_urls: {
+                  spotify: data.data.external_urls.spotify
+                }
+              }
+            } else {
+              return {
+                ...prevState,
+                isPlaying: false,
+                album: null,
+                name: null,
+                artists: [],
+                external_urls: {
+                  spotify: null
+                }
+              }
             }
-          ))
+          })
         })
         .catch(_ => {
           setState(prevState => ({
@@ -84,7 +112,23 @@ export default function CurrentlyPlaying() {
           }))
         })
     }
+  }
 
+  const outputArtistsNames = () => {
+    const returns = []
+    const artistsCount = state.artists.length
+    for (let index = 0; index < artistsCount; index++) {
+      const artist = state.artists[index];
+      if (index !== 0 && index === artistsCount - 1) {
+        returns.push((
+            <span>and </span>
+        ))
+      }
+      returns.push((
+        <a href={artist.external_urls.spotify} target="_blank"><strong>{artist.name}</strong></a>
+      ))
+    }
+    return returns
   }
   return (
     <div className="currently-playing">
@@ -96,11 +140,51 @@ export default function CurrentlyPlaying() {
           <GatsbyImage image={profileImageNotMobile} className="gatsby-image-wrapper--desktop" alt="Gaby's face photo"
                        loading="eager"
           />
-          <div className={`currently-playing__circle  ${state.isPlaying ? "playing" : ""}`}>
-            <div className="currently-playing__circle--mobile">
-              <MusicNoteIcon />
-            </div>
-          </div>
+          {
+            state.isPlaying && (
+              <>
+                <div className={`currently-playing__circle  ${state.isPlaying ? "playing" : ""}`}>
+                  <label htmlFor="currently-playing__handle-show-info"
+                         className="currently-playing__circle--mobile">
+                    <MusicNoteIcon />
+                  </label>
+                  <label htmlFor="currently-playing__handle-show-info"
+                         className="currently-playing__circle--desktop" />
+
+                </div>
+                <input type="checkbox" id="currently-playing__handle-show-info"
+                       className="currently-playing__handle-show-info" />
+                <div className={`spotify__wrapper ${state.isPlaying ? "playing" : ""}`}>
+                  <div className="spotify">
+                    <div className="spotify__live-icon">
+                      <LiveIcon />
+                    </div>
+                    <label htmlFor="currently-playing__handle-show-info"
+                           className="spotify__close-icon icon-close">
+                    </label>
+                    <p className="spotify__primary-text">
+                      While working I usually listen to music.
+                    </p>
+                    <p className="spotify__secondary-text">
+                      Now listening to <a href={state.external_urls.spotify} target="_blank"><strong
+                      className="song__name">{state.name}</strong></a> by <span
+                      className="artist__name">{outputArtistsNames()}</span>
+                    </p>
+                    {
+                      state.album.images.length > 0 && (
+                        <a href={state.album.external_urls.spotify} className="spotify__album-cover" target="_blank">
+                          <img title={state.album.name} alt={state.album.name}
+                               src={state.album.images.find(({height})=> height==300).url} />
+                        </a>
+                      )
+                    }
+
+                  </div>
+                </div>
+              </>
+            )
+          }
+
         </div>
       </div>
       <svg className="currently-playing__desktop-animation">
