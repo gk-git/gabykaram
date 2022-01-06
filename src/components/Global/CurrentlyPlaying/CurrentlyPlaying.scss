@@ -1,0 +1,155 @@
+.currently-playing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+
+  &__container {
+    min-width: 125px;
+    min-height: 125px;
+    @media (min-width: 767px) {
+      min-width: 250px;
+      min-height: 250px;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: -1000000px;
+  }
+
+  &__circle {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 222;
+    animation: rotating 150s linear infinite;
+    cursor: pointer;
+    filter: url('#wavy') blur(1px);
+    display: none;
+    &.playing {
+      display: block;
+    }
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    &:before {
+
+      border: 5px solid var(--main-bg-color);
+      border-radius: 50%;
+      box-shadow: 0 0 12.5px var(--secondary-bg-color), inset 0 0 12.5px var(--secondary-bg-color);
+      animation: animate 5s linear infinite;
+
+      @media (min-width: 767px) {
+        border: 10px solid var(--main-bg-color);
+        box-shadow: 0 0 25px var(--secondary-bg-color), inset 0 0 25px var(--secondary-bg-color);
+      }
+    }
+
+    &:after {
+      border: 5px solid var(--main-bg-color);
+      border-radius: 50%;
+      box-shadow: 0 0 2.5px var(--main-bg-color), inset 0 0 5px var(--main-bg-color);
+    }
+
+    @media all and (min-width: 767px) {
+      width: 250px;
+      height: 250px;
+      &:before, &:after {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+      }
+    }
+
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    @media (min-width: 767px) {
+      width: 250px;
+      height: 250px;
+    }
+
+    .gatsby-image-wrapper {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: var(--box-shadow);
+      margin: 12px;
+
+      &.gatsby-image-wrapper--desktop {
+        display: none;
+      }
+
+      @media all and (min-width: 767px) {
+        &.gatsby-image-wrapper--mobile {
+          display: none;
+        }
+        &.gatsby-image-wrapper--desktop {
+          display: inline-block;
+        }
+        width: 200px;
+        height: 200px;
+        margin: 25px;
+      }
+    }
+  }
+
+}
+
+
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 25px var(--secondary-bg-color), inset 0 0 25px var(--secondary-bg-color);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    box-shadow: 0 0 30px var(--secondary-bg-color), inset 0 0 30px var(--secondary-bg-color);
+  }
+
+  40% {
+    box-shadow: 0 0 20px var(--secondary-bg-color), inset 0 0 20px var(--secondary-bg-color);
+  }
+  60% {
+    box-shadow: 0 0 40px var(--secondary-bg-color), inset 0 0 40px var(--secondary-bg-color);
+  }
+  80% {
+    box-shadow: 0 0 50px var(--secondary-bg-color), inset 0 0 50px var(--secondary-bg-color);
+  }
+  100% {
+    box-shadow: 0 0 25px var(--secondary-bg-color), inset 0 0 25px var(--secondary-bg-color);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
