@@ -24,51 +24,6 @@
     margin: auto;
   }
 
-  &__picture {
-    height: 100px;
-    width: 100%;
-    grid-area: picture;
-    text-align: center;
-
-    .desktop {
-      display: none;
-    }
-
-    @media all and (min-width: 767px) {
-      .mobile {
-        display: none;
-      }
-      .desktop {
-        display: inline-block;
-      }
-    }
-
-    .gatsby-image-wrapper {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      box-shadow: var(--box-shadow);
-      overflow: hidden;
-
-    }
-
-    @media (min-width: 500px) {
-      width: 100px;
-      margin-right: 2em;
-    }
-    @media (min-width: 767px) {
-      width: 200px;
-      height: 200px;
-      .gatsby-image-wrapper {
-        width: 200px;
-        height: 200px;
-      }
-    }
-    img {
-      pointer-events: none;
-    }
-  }
-
   &__title {
     font-size: 2.5rem;
     line-height: 1.258;
