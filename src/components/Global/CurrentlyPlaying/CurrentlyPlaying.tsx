@@ -24,7 +24,7 @@ export default function CurrentlyPlaying() {
     if (window !== undefined) {
       setTimeout(getPlayingData, 4000)
     }
-  }, [window])
+  }, [])
 
   const handleUseIsActive =  ()=> {
     setState(prevState => ({
