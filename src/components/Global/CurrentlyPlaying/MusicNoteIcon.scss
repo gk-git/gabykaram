@@ -1,0 +1,91 @@
+.music-icon {
+  width: 20px;
+  fill: hsl(308deg 31% 35%);
+  stroke: none;
+  animation: animateDownSVG 5s linear infinite;
+
+  .cls-1, .cls-2 {
+    stroke: #000;
+  }
+
+  .white {
+    fill: white;
+  }
+
+  .cls-1, .cls-2, .cls-3 {
+    fill-rule: evenodd;
+  }
+
+  .cls-2, .cls-3 {
+    fill: #fff;
+  }
+
+  .cls-3 {
+    stroke: #fff;
+  }
+
+  .left-group {
+    animation: animateDown 6s linear infinite;
+  }
+
+  .right-group {
+    animation: animateDown 6s linear infinite;
+  }
+
+
+  @keyframes animateDown {
+
+    0% {
+
+      transform: translate(0, -80px)
+    }
+    20% {
+      transform: translate(0, -60px)
+    }
+
+    40% {
+      transform: translate(0, -40px)
+    }
+    60% {
+      transform: translate(0, -20px)
+    }
+    80% {
+      transform: translate(0, 0)
+    }
+    100% {
+      transform: translate(0, -80px)
+    }
+  }
+
+
+  @keyframes animateDownSVG {
+
+    0% {
+
+      transform: translate(0, 0)
+    }
+    20% {
+
+      transform: translate(0, 2px)
+    }
+    40% {
+
+      transform: translate(0, 4px)
+    }
+
+    50% {
+      transform: translate(0, 5px)
+    }
+    60% {
+      transform: translate(0, 4px)
+    }
+    80% {
+      transform: translate(0, 2px)
+    }
+
+    100% {
+      transform: translate(0, 0)
+    }
+  }
+
+}
