@@ -26,7 +26,7 @@ export default function CurrentlyPlaying() {
   })
   useInterval(() => {
     getPlayingData()
-  }, 100000)
+  }, 10000)
   useEffect(() => {
     if (window !== undefined) {
       setTimeout(getPlayingData, 4000)
