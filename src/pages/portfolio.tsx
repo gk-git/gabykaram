@@ -40,16 +40,6 @@ export default function PortfolioPage () {
             </a>
           </div>
           <div className="project">
-            <a href="https://www.mehnati.org/" rel="noopener noreferrer" target="_blank">
-              <StaticImage src="../assets/images/projects/mehnati.org.png" alt="Mehnati visual"
-                           placeholder="blurred"
-              />
-              <span className="project__content">
-                  <span className="project__title">Mehnati</span>
-              </span>
-            </a>
-          </div>
-          <div className="project">
             <a href="https://abouhanna.com" rel="noopener noreferrer" target="_blank">
               <StaticImage src="../assets/images/projects/abouhanna.com.png" alt="Kevin Abou Hanna visual"
                            placeholder="blurred"

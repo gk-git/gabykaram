@@ -19,6 +19,16 @@ export default function Home () {
         <section>
           <div className="projects">
             <div className="project">
+              <a href="https://riothere.com/" rel="noopener noreferrer" target="_blank">
+                <StaticImage src="../assets/images/projects/riothere.com.png" alt="Riothere"
+                             placeholder="blurred"
+                />
+                <span className="project__content">
+                  <span className="project__title">Riothere</span>
+              </span>
+              </a>
+            </div>
+            <div className="project">
               <a href="https://concertforafghanistan.com/" rel="noopener noreferrer" target="_blank">
                 <StaticImage src="../assets/images/projects/concertforafghanistan.com.png" alt="Concert For Afghanistan visual"
                              placeholder="blurred"
@@ -28,18 +38,6 @@ export default function Home () {
                 </span>
               </a>
             </div>
-            <div className="project">
-              <a href="https://www.mehnati.org/" rel="noopener noreferrer" target="_blank">
-                <StaticImage src="../assets/images/projects/mehnati.org.png" alt="Mehnati visual"
-                             placeholder="blurred"
-                />
-                <span className="project__content">
-                  <span className="project__title ">Mehnati</span>
-                </span>
-              </a>
-            </div>
-
-
           </div>
           <div className="align-center" >
             <Link to="/portfolio" className="cta">
