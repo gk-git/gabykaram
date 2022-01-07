@@ -84,8 +84,8 @@
           grid-area: album-cover;
           justify-self: center;
           cursor: pointer;
-          max-width: 767px;
-          min-width: min(100%, 767px);
+          max-width: 640px;
+          min-width: min(100%, 640px);
           margin: auto;
           img {
             width: 100%;
