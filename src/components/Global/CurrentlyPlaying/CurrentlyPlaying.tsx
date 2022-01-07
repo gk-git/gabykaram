@@ -124,7 +124,10 @@ export default function CurrentlyPlaying() {
       }
       returns.push((
         <>
-          <a href={artist.external_urls.spotify} target="_blank"><strong>{artist.name}</strong></a>, <span/>
+          <a href={artist.external_urls.spotify} target="_blank"><strong>{artist.name}</strong></a>
+          {
+            artistsCount >1 && index !== artistsCount-1 && (<>, <span/></>)
+          }
         </>
       ))
     }
