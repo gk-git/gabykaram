@@ -43,7 +43,7 @@
         grid-template-rows: auto auto auto auto 1fr;
         grid-gap: 1.5rem;
         color: #fff;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         ::selection {
           background: var(--secondary-bg-color);
