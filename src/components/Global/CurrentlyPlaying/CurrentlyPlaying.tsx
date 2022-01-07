@@ -29,7 +29,7 @@ export default function CurrentlyPlaying() {
   }, 10000)
   useEffect(() => {
     if (window !== undefined) {
-      setTimeout(getPlayingData, 2000)
+      setTimeout(getPlayingData, 4000)
     }
   }, [])
 
