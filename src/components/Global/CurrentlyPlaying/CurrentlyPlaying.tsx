@@ -79,8 +79,6 @@ export default function CurrentlyPlaying() {
           setState(prevState => {
 
             if (data.isPlaying) {
-
-              debugger;
               return {
                 ...prevState,
                 isPlaying: data.isPlaying,
@@ -125,7 +123,9 @@ export default function CurrentlyPlaying() {
         ))
       }
       returns.push((
-        <a href={artist.external_urls.spotify} target="_blank"><strong>{artist.name}</strong></a>
+        <>
+          <a href={artist.external_urls.spotify} target="_blank"><strong>{artist.name}</strong></a>, <span/>
+        </>
       ))
     }
     return returns
