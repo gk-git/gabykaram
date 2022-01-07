@@ -29,7 +29,7 @@ export default function CurrentlyPlaying() {
   }, 10000)
   useEffect(() => {
     if (window !== undefined) {
-      setTimeout(getPlayingData, 4000)
+      setTimeout(getPlayingData, 2000)
     }
   }, [])
 
@@ -174,7 +174,7 @@ export default function CurrentlyPlaying() {
                       state.album.images.length > 0 && (
                         <a href={state.album.external_urls.spotify} className="spotify__album-cover" target="_blank">
                           <img title={state.album.name} alt={state.album.name}
-                               src={state.album.images.find(({height})=> height==300).url} />
+                               src={state.album.images.find(({height})=> height==640).url} />
                         </a>
                       )
                     }

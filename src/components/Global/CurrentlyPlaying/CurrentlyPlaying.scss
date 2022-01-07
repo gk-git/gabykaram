@@ -35,7 +35,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 2;
+        z-index: 3;
         display: grid;
         grid-template-columns: auto 1fr 50px;
         grid-template-areas: "live . close" " primary-text primary-text primary-text" "secondary-text secondary-text secondary-text" "album-cover album-cover album-cover" ". . . ";
@@ -43,6 +43,7 @@
         grid-template-rows: auto auto auto auto 1fr;
         grid-gap: 1.5rem;
         color: #fff;
+        overflow-y: scroll;
 
         ::selection {
           background: var(--secondary-bg-color);
@@ -67,24 +68,34 @@
 
         &__primary-text {
           grid-area: primary-text;
+          max-width: 767px;
+          min-width: min(100%, 767px);
+          margin: auto;
         }
 
         &__secondary-text {
           grid-area: secondary-text;
+          max-width: 767px;
+          min-width: min(100%, 767px);
+          margin: auto;
         }
 
         &__album-cover {
           grid-area: album-cover;
           justify-self: center;
           cursor: pointer;
+          max-width: 767px;
+          min-width: min(100%, 767px);
+          margin: auto;
           img {
             width: 100%;
             height: auto;
           }
         }
 
-        @media all and (min-width: 767px) {
+        @media all and (min-height: 500px) and (min-width: 767px) {
           bottom: 20px;
+          z-index: 2;
           top: unset;
           grid-gap: 0.8rem;
           border: 2px solid #0f0;
