@@ -35,7 +35,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 22222;
+        z-index: 2;
         display: grid;
         grid-template-columns: auto 1fr 50px;
         grid-template-areas: "live . close" " primary-text primary-text primary-text" "secondary-text secondary-text secondary-text" "album-cover album-cover album-cover" ". . . ";
@@ -148,7 +148,7 @@
           bottom: 0;
           width: 250px;
           height: 250px;
-          z-index: 222;
+          z-index: 2;
           animation: rotating 150s linear infinite;
           cursor: pointer;
           filter: url('#wavy') blur(1px);
