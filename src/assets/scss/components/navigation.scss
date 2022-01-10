@@ -137,6 +137,9 @@
         &:hover {
           color: var(--main-color)
         }
+        &.current {
+          color: var(--secondary-color)
+        }
       }
     }
 
