@@ -1,8 +1,7 @@
 
-export interface  LayoutProps {
+export interface  LayoutContainerProps {
   navigationProps?: {
     isTransparent?: boolean,
-    isOpen?: boolean
   },
   showIntro?:boolean,
   introComponent?: any,
@@ -14,9 +13,6 @@ export interface  LayoutProps {
     description?: string,
   }
 }
-export interface NavigationProps {
+export interface NavigationContainerProps {
   isTransparent?: boolean,
-  isOpen: boolean,
-  toggleMenu: () => void,
-  closeMenu: () => void,
 }
