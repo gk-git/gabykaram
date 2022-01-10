@@ -46,24 +46,24 @@ const Layout = ({
             checkFooterHeight()
           }, [windowSize])
 
-  return (
-    <div className={`default-layout ${className} ${navigation.isOpen ? "open" : "close"}`}>
-      <Helmet
-        htmlAttributes={{
-          lang: "en"
-        }}
-      />
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>{seo?.title || config.defaultSeo.title}</title>
-        <meta name="description" content={seo?.description || config.defaultSeo.description} />
-      </Helmet>
-      <header>
-        <Navigation {...navigationProps} />
-        {
-          showIntro && introComponent
-        }
-      </header>
+          return (
+            <div className={`default-layout ${className} ${navigation.isOpen ? "open" : "close"}`}>
+              <Helmet
+                htmlAttributes={{
+                  lang: "en"
+                }}
+              />
+              <Helmet>
+                <meta charSet="utf-8" />
+                <title>{seo?.title || config.defaultSeo.title}</title>
+                <meta name="description" content={seo?.description || config.defaultSeo.description} />
+              </Helmet>
+              <header>
+                <Navigation {...navigationProps} />
+                {
+                  showIntro && introComponent
+                }
+              </header>
 
               <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
                 {
