@@ -1,13 +1,19 @@
+import { graphql, useStaticQuery } from "gatsby"
 import { withPrefix } from "gatsby-link"
 import React from "react"
 import PropTypes from "prop-types"
-const dateObj = new Date();
-const month = dateObj.getUTCMonth() + 1; //months from 1-12
-const day = dateObj.getUTCDate();
-const year = dateObj.getUTCFullYear();
 
-const scriptHash = `${year}-${month}-${day}`;
 export default function HTML(props) {
+  const data = useStaticQuery(graphql`
+      query HasDateQuery {
+          site {
+              siteMetadata {
+                  hashDate
+              }
+          }
+      }
+  `)
+  const {site: {siteMetadata: {hashDate}}} = data;
   return (
     <html {...props.htmlAttributes}>
     <head>
@@ -30,7 +36,7 @@ export default function HTML(props) {
     {process.env.NODE_ENV === "production" && (
        <>
          <script type="text/javascript" dangerouslySetInnerHTML={{
-           __html:`window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="${withPrefix(`heapanalytics.com/script-${scriptHash}.js`)}";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+           __html:`window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="${withPrefix(`heapanalytics.com/script-${hashDate}.js`)}";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
 heap.load("2943585873"); `
          }}>
        
