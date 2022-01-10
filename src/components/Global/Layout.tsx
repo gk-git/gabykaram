@@ -8,6 +8,7 @@ import { LayoutProps } from "../../types/components"
 import getConfig  from "../../config"
 import NavigationContainer from "../../containers/NavigationContainer"
 import { SVGSource } from "../SpriteLogo"
+import { graphql, useStaticQuery, withPrefix } from "gatsby"
 
 const Layout = ({
                   navigationProps,
@@ -38,6 +39,16 @@ const Layout = ({
     checkFooterHeight()
   }, [windowSize])
 
+  const data = useStaticQuery(graphql`
+      query HasDateQuery {
+          site {
+              siteMetadata {
+                  hashDate
+              }
+          }
+      }
+  `)
+  const {site: {siteMetadata: {hashDate}}} = data;
   return (
     <div className={`default-layout ${className} ${navigationProps.isOpen ? "open" : "close"}`}>
       <Helmet
@@ -78,6 +89,18 @@ const Layout = ({
       </footer>
 
       <SVGSource/>
+          {process.env.NODE_ENV === "production" && (
+             <>
+              <Helmet>
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                  __html:`window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="${withPrefix(`heapanalytics.com/script-${hashDate}.js`)}";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+      heap.load("2943585873"); `
+                }}>
+
+                </script>
+              </Helmet>
+             </>
+          )}
     </div>
   )
 }
