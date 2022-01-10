@@ -19,27 +19,32 @@ const Layout = ({
                   seo
                 }: LayoutProps) => {
   const config = getConfig()
-  const { navigation } = useContext(AppContext)
   const parallaxPlaceholder = useRef()
   const footer = useRef<HTMLDivElement>()
   const windowSize = useWindowSize()
 
+  return (
+    <AppContext.Consumer>
+      {
+        ({ navigation }) => {
 
-  const checkFooterHeight = () => {
-    if (footer.current.offsetHeight > window.innerHeight) { // Check if footer is taller than window height
-      footer.current.style.bottom = "unset"
-      footer.current.style.top = "0px"
-    } else { // If footer height is not greater than window height, bottom is 0 for normal parallax
-      footer.current.style.top = "unset"
-      footer.current.style.bottom = "0px"
-    }
-  }
-  useEffect(() => {
-    checkFooterHeight()
-  }, [])
-  useEffect(() => {
-    checkFooterHeight()
-  }, [windowSize])
+
+
+          const checkFooterHeight = () => {
+            if (footer.current.offsetHeight > window.innerHeight) { // Check if footer is taller than window height
+              footer.current.style.bottom = "unset"
+              footer.current.style.top = "0px"
+            } else { // If footer height is not greater than window height, bottom is 0 for normal parallax
+              footer.current.style.top = "unset"
+              footer.current.style.bottom = "0px"
+            }
+          }
+          useEffect(() => {
+            checkFooterHeight()
+          }, [])
+          useEffect(() => {
+            checkFooterHeight()
+          }, [windowSize])
 
   return (
     <div className={`default-layout ${className} ${navigation.isOpen ? "open" : "close"}`}>
@@ -60,26 +65,30 @@ const Layout = ({
         }
       </header>
 
-      <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
-        {
-          !isSinglePost ? (
-            <div id="content">
-              {children}
+              <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
+                {
+                  !isSinglePost ? (
+                    <div id="content">
+                      {children}
+                    </div>
+                  ) : (
+                    <>
+                      {children}
+                    </>
+                  )
+                }
+              </main>
+              <div className="parallax-placeholder" ref={parallaxPlaceholder} />
+              <footer ref={footer}>
+                <div className="footer-container">
+                  <Footer />
+                </div>
+              </footer>
             </div>
-          ) : (
-            <>
-              {children}
-            </>
           )
         }
-      </main>
-      <div className="parallax-placeholder" ref={parallaxPlaceholder} />
-      <footer ref={footer}>
-        <div className="footer-container">
-          <Footer />
-        </div>
-      </footer>
-    </div>
+      }
+    </AppContext.Consumer>
   )
 }
 Layout.defaultProps = {
