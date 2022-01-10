@@ -1,11 +1,11 @@
 import React from "react"
-import Layout from "../components/Global/Layout"
 import Intro from "../components/Global/Intro"
 import { Link } from "gatsby"
+import LayoutContainer from "../containers/LayoutContainer"
 
 export default function PageNotFound() {
   return (
-    <Layout
+    <LayoutContainer
       navigationProps={{
         isTransparent: false,
       }}
@@ -22,6 +22,6 @@ export default function PageNotFound() {
           You can check my homepage by clicking <Link to="/">here</Link>.
         </p>
       </div>
-    </Layout>
+    </LayoutContainer>
   )
 }

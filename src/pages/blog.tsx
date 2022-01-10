@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Intro from "../components/Global/Intro"
-import Layout from "../components/Global/Layout"
+import LayoutContainer from "../containers/LayoutContainer"
 
 export const query = graphql
   `
@@ -72,7 +72,7 @@ export const query = graphql
 
 export default function BlogPage ({ data }) {
   return (
-    <Layout
+    <LayoutContainer
       showIntro={true}
       introComponent={<Intro />}
       seo={{
@@ -117,6 +117,6 @@ export default function BlogPage ({ data }) {
       }
 
 
-    </Layout>
+    </LayoutContainer>
   )
 }

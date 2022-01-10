@@ -1,11 +1,11 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Intro from "../components/Global/Intro"
-import Layout from "../components/Global/Layout"
+import LayoutContainer from "../containers/LayoutContainer"
 
 export default function PortfolioPage () {
   return (
-    <Layout
+    <LayoutContainer
       navigationProps={{
         isTransparent: false
       }}
@@ -111,6 +111,6 @@ export default function PortfolioPage () {
           </div>
         </div>
       </section>
-    </Layout>
+    </LayoutContainer>
   )
 }

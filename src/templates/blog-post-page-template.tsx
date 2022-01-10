@@ -1,9 +1,9 @@
+import React, { useEffect } from "react"
 import { graphql, navigate } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import React, { useEffect } from "react"
 import Intro from "../components/Global/Intro"
-import Layout from "../components/Global/Layout"
 import NewsSlider from "../components/NewsSlider"
+import LayoutContainer from "../containers/LayoutContainer"
 
 export const query = graphql
     `
@@ -60,12 +60,12 @@ const BlogSinglePostPage =  ({ data }) => {
       document.querySelector("header").scrollIntoView({behavior: "smooth", block: "start"})
     }
   }, [data])
-  
+
   const handleBackButtonClick = () => {
     navigate('/blog')
   }
   return (
-    <Layout
+    <LayoutContainer
       showIntro={true}
       introComponent={<Intro />}
       className={"blog-post"}
@@ -84,7 +84,7 @@ const BlogSinglePostPage =  ({ data }) => {
         <MDXRenderer>{body}</MDXRenderer>
       </div>
       <NewsSlider news={blogPosts} />
-    </Layout>
+    </LayoutContainer>
   )
 }
 

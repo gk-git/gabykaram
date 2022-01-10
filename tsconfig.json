@@ -9,6 +9,7 @@
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "resolveJsonModule": true,
     "plugins": [
       {
         "name": "typescript-styled-plugin"

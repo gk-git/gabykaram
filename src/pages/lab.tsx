@@ -1,6 +1,6 @@
 import React from "react"
 import Intro from "../components/Global/Intro"
-import Layout from "../components/Global/Layout"
+import LayoutContainer from "../containers/LayoutContainer"
 
 const labLinks = [
   {
@@ -22,7 +22,7 @@ const labLinks = [
 ]
 export default function LabPage() {
   return (
-    <Layout
+    <LayoutContainer
       showIntro={true}
       introComponent={<Intro />}
       seo={{
@@ -53,6 +53,6 @@ export default function LabPage() {
           </p>
         </div>
       </div>
-    </Layout>
+    </LayoutContainer>
   )
 }

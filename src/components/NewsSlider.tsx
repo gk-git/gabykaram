@@ -1,17 +1,25 @@
+// @ts-nocheck
+// TODO: Fix typescript errors
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Ticker from "react-ticker"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
+interface NewsSliderState {
+  activeItem: number,
+  activeIndex?: number,
+  didMove: 0 | boolean,
+  triggerOnResize: boolean
+}
 
-export default function NewsSlider ({ news }) {
-  
+export default function NewsSlider <NewsSliderState>({ news }) {
+
   const [state, setState] = useState({
     activeItem: 0,
     didMove: 0,
     triggerOnResize: false
   })
-  
+
   /*
    * onNext
    *
@@ -29,7 +37,7 @@ export default function NewsSlider ({ news }) {
    * */
   const onNext = (index) => {
     let activeIndex = (index) % news.length
-    
+
     if (state.didMove) {
       setState(prevState => ({
         ...prevState,
@@ -42,9 +50,9 @@ export default function NewsSlider ({ news }) {
       }))
     }
   }
-  
+
   const { activeIndex, didMove } = state
-  
+
   /*
    * This block is to get the active new available on the view
    *
@@ -56,12 +64,12 @@ export default function NewsSlider ({ news }) {
     if (activeIndex !== undefined && didMove) {
       activeNew = news[state.activeIndex % news.length]
     }
-    
+
     return (
       <div className="news-slider">
         <div className="news-slider__container">
           <div className="item">
-            
+
             <div className="item__info">
               {
                 activeNew !== undefined ? (
@@ -84,7 +92,7 @@ export default function NewsSlider ({ news }) {
                 ) : null
               }
             </div>
-            
+
             <div className="item__content__wrapper">
               <Ticker
                 offset="80%"
@@ -108,7 +116,7 @@ export default function NewsSlider ({ news }) {
             </div>
           </div>
         </div>
-      
+
       </div>
     )
   } else {
