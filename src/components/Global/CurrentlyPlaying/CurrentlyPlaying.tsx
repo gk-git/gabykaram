@@ -119,16 +119,16 @@ export default function CurrentlyPlaying() {
       const artist = state.artists[index];
       if (index !== 0 && index === artistsCount - 1) {
         returns.push((
-            <span>and </span>
+            <span key={`${index}-and`}>and </span>
         ))
       }
       returns.push((
-        <>
-          <a href={artist.external_urls.spotify} target="_blank"><strong>{artist.name}</strong></a>
+        <span key={index}>
+          <a  href={artist.external_urls.spotify} target="_blank"><strong>{artist.name}</strong></a>
           {
             artistsCount >1 && index !== artistsCount-1 && (<>, <span/></>)
           }
-        </>
+        </span>
       ))
     }
     return returns
