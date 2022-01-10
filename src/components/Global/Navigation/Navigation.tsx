@@ -34,6 +34,10 @@ const Navigation = ({ isTransparent, isOpen, closeMenu, toggleMenu }: Navigation
                       title="Learn about me (H)">Home</Link>
               </li>
               <li>
+                <Link to="/blog/" onClick={handleCloseMenu} className="blog" activeClassName="current"
+                      title="Read my blog (B)">Blog</Link>
+              </li>
+              <li>
                 <Link to="/portfolio/" onClick={handleCloseMenu} className="portfolios" activeClassName="current"
                       title="Check out my portfolio (W)">Portfolio</Link>
               </li>
@@ -41,10 +45,7 @@ const Navigation = ({ isTransparent, isOpen, closeMenu, toggleMenu }: Navigation
                 <Link to="/lab/" onClick={handleCloseMenu} className="lab" activeClassName="current"
                       title="Visit my lab (L)">Lab</Link>
               </li>
-              <li>
-                <Link to="/blog/" onClick={handleCloseMenu} className="blog" activeClassName="current"
-                      title="Read my blog (B)">Blog</Link>
-              </li>
+
             </ul>
 
             <ul className="contact">
