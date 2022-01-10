@@ -13,12 +13,19 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === "production"
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
+const dateObj = new Date();
+const month = dateObj.getUTCMonth() + 1; //months from 1-12
+const day = dateObj.getUTCDate();
+const year = dateObj.getUTCFullYear();
+const scriptHash = `${year}-${month}-${day}`;
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
     siteUrl: siteUrl,
     title: `Gaby Karam | Digital Producer & Developer`,
     description: `I don’t find myself defined by who I am currently. I define myself by what I am looking to be.`,
+    hashDate: scriptHash
   },
   plugins: [
     `gatsby-plugin-offline`,
