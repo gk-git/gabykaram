@@ -7,6 +7,7 @@ import Footer from "./Footer"
 import { LayoutProps } from "../../types/components"
 import getConfig  from "../../config"
 import NavigationContainer from "../../containers/NavigationContainer"
+import { SVGSource } from "../SpriteLogo"
 
 const Layout = ({
                   navigationProps,
@@ -75,6 +76,8 @@ const Layout = ({
           <Footer />
         </div>
       </footer>
+
+      <SVGSource/>
     </div>
   )
 }
