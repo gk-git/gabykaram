@@ -2,11 +2,11 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Intro from "../components/Global/Intro"
-import Layout from "../components/Global/Layout"
+import LayoutContainer from "../containers/LayoutContainer"
 
 export default function Home () {
   return (
-    <Layout
+    <LayoutContainer
       navigationProps={{
         isTransparent: false
       }}
@@ -46,6 +46,6 @@ export default function Home () {
           </div>
         </section>
       </div>
-    </Layout>
+    </LayoutContainer>
   )
 }
