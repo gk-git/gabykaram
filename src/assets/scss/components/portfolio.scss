@@ -9,7 +9,7 @@
 .project {
   position: relative;
   overflow: hidden;
-
+  animation: append-animate .45s linear;
   a {
     &::before {
       content: '';
