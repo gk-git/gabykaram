@@ -30,9 +30,16 @@
     &__label {
       @include visually-hidden;
     }
-    svg {
-      max-width: 100px;
-      padding: 0.5em;
+    &__icon {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        max-width: 100px;
+        padding: 0.5em;
+      }
     }
 
     @media all and (min-width: 767px) {
