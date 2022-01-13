@@ -20,3 +20,10 @@ footer {
   overflow: hidden;
   width: 100%;
 }
+
+.visual-check-down {
+  text-align: center;
+  @include moveUpDown(1rem, true);
+  cursor: pointer;
+}
+

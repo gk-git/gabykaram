@@ -39,6 +39,13 @@ const Layout = ({
     checkFooterHeight()
   }, [windowSize])
 
+  const handleClickOnVisualCheckDown = () => {
+    window.document.querySelector("body").scrollTo({
+      top: document.body.scrollHeight,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
   const data = useStaticQuery(graphql`
       query HasDateQuery {
           site {
@@ -80,6 +87,9 @@ const Layout = ({
             </>
           )
         }
+        <div className="visual-check-down" onClick={handleClickOnVisualCheckDown}>
+          <i className="icon-arrow-down" />
+        </div>
       </main>
       <div className="parallax-placeholder" ref={parallaxPlaceholder} />
       <footer ref={footer}>
