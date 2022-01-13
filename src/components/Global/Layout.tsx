@@ -92,11 +92,9 @@ const Layout = ({
         </div>
       </main>
       <div className="parallax-placeholder" ref={parallaxPlaceholder} />
-      <footer ref={footer}>
-        <div className="footer-container">
-          <Footer />
-        </div>
-      </footer>
+      <div ref={footer} className="layout-footer">
+        <Footer />
+      </div>
 
       <SVGSource/>
           {process.env.NODE_ENV === "production" && (
