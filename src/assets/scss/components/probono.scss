@@ -1,0 +1,57 @@
+.pro-bono {
+  background: #042013;
+  color: #19E68A;
+
+  &__container {
+    max-width: 867px;
+    margin: auto;
+    padding: 5rem 2rem;
+    display: grid;
+    grid-gap: 3rem;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__content {
+    display: grid;
+    grid-gap: 2rem;
+
+    p {
+      line-height: 2;
+
+      a:not(.social-icon) {
+        color: inherit;
+        text-decoration: underline;
+
+        &:hover {
+          color: var(--secondary-color);
+        }
+      }
+
+      .social-icon {
+
+
+        &:not(:last-child) {
+          margin-right: 1.6rem;
+        }
+
+        &:hover {
+          svg {
+            fill: var(--secondary-color);
+          }
+        }
+
+        &__name {
+          @include visually-hidden
+        }
+
+        svg {
+          width: 2rem;
+          fill: white;
+        }
+      }
+    }
+  }
+}
