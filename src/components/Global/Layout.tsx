@@ -59,13 +59,14 @@ const Layout = ({
   return (
     <div className={`default-layout ${className} ${navigationProps.isOpen ? "open" : "close"}`}>
       <Helmet
+        defer={false}
         htmlAttributes={{
           lang: "en"
         }}
+        title={seo?.title || config.defaultSeo.title}
       />
-      <Helmet>
+      <Helmet defer={false}>
         <meta charSet="utf-8" />
-        <title>{seo?.title || config.defaultSeo.title}</title>
         <meta name="description" content={seo?.description || config.defaultSeo.description} />
       </Helmet>
       <header>
