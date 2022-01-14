@@ -70,11 +70,13 @@ const Layout = ({
       </Helmet>
       <header>
         <NavigationContainer {...navigationProps} />
+
+      </header>
+      <aside>
         {
           showIntro && introComponent
         }
-      </header>
-
+      </aside>
       <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
         {
           !isSinglePost ? (
