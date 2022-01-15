@@ -5,6 +5,8 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Ticker from "react-ticker"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
+import useInView from "react-cool-inview";
+
 interface NewsSliderState {
   activeItem: number,
   activeIndex?: number,
@@ -12,13 +14,30 @@ interface NewsSliderState {
   triggerOnResize: boolean
 }
 
-export default function NewsSlider <NewsSliderState>({ news }) {
+export default function NewsSlider({ news }) {
 
-  const [state, setState] = useState({
+  const [state, setState] = useState<NewsSliderState>({
     activeItem: 0,
     didMove: 0,
     triggerOnResize: false
   })
+
+  const { observe, unobserve, inView, scrollDirection, entry } = useInView({
+    threshold: 0.25, // Default is 0
+    onChange: ({ inView, scrollDirection, entry, observe, unobserve }) => {
+      // Triggered whenever the target meets a threshold, e.g. [0.25, 0.5, ...]
+
+      unobserve(); // To stop observing the current target element
+      observe(); // To re-start observing the current target element
+    },
+    onEnter: ({ scrollDirection, entry, observe, unobserve }) => {
+      // Triggered when the target enters the viewport
+    },
+    onLeave: ({ scrollDirection, entry, observe, unobserve }) => {
+      // Triggered when the target leaves the viewport
+    },
+    // More useful options...
+  });
 
   /*
    * onNext
@@ -66,7 +85,7 @@ export default function NewsSlider <NewsSliderState>({ news }) {
     }
 
     return (
-      <div className="news-slider">
+      <div className="news-slider" ref={observe}>
         <div className="news-slider__container">
           <div className="item">
 
@@ -96,7 +115,7 @@ export default function NewsSlider <NewsSliderState>({ news }) {
             <div className="item__content__wrapper">
               <Ticker
                 offset="80%"
-                move={true}
+                move={inView}
                 speed={8}
                 onNext={onNext}
                 triggerOnResize={news.length > 0}
