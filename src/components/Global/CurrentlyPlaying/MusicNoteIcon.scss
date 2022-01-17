@@ -1,6 +1,6 @@
 .music-icon {
   width: 20px;
-  fill: hsl(308deg 31% 35%);
+  fill: var(--main-icon-color);
   stroke: none;
   animation: animateDownSVG 5s linear infinite;
 
