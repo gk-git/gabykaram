@@ -5,7 +5,7 @@ header, main, aside, .parallax-placeholder {
   position: relative; /* crucial for z-index to work */
 }
 header {
-  background: white;
+  background: var(--container-background-color);
   position: sticky;
   top: 0;
   left: 0;

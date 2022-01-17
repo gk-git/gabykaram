@@ -7,7 +7,7 @@
   width: 100%;
   display: grid;
   font-size: 23px;
-  background: rgba(255, 255, 102, 0.3);
+  background: var(--header-background-color);
   @media all and (min-width: 767px) {
     font-size: 28px;
   }
@@ -40,7 +40,7 @@
     background-color: transparent;
     border: unset;
     cursor: pointer;
-    color: var(--main-color);
+    color: var(--main-icon-color);
     outline: none;
 
     &:hover :before {
@@ -75,7 +75,7 @@
   }
 
   &__menu {
-    background: rgba(0, 0, 0, .85);
+    background: var(--menu-background-color);
     transform: translate3d(0, -800px, 0);
     transition: transform .25s;
     align-items: center;

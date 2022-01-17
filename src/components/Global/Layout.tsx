@@ -1,11 +1,11 @@
 import "normalize.css/normalize.css"
-import React, {  useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import Helmet from "react-helmet"
 import "../../assets/scss/main.scss"
 import useWindowSize from "../../hooks/useWindowSize"
 import Footer from "./Footer"
 import { LayoutProps } from "../../types/components"
-import getConfig  from "../../config"
+import getConfig from "../../config"
 import NavigationContainer from "../../containers/NavigationContainer"
 import { SVGSource } from "../SpriteLogo"
 import { graphql, useStaticQuery, withPrefix } from "gatsby"
@@ -77,20 +77,22 @@ const Layout = ({
           showIntro && introComponent
         }
       </aside>
-      <main className={`content invert ${isSinglePost ? " single-post " : ""}`}>
-        {
-          !isSinglePost ? (
-            <div id="content">
-              {children}
-            </div>
-          ) : (
-            <>
-              {children}
-            </>
-          )
-        }
-        <div className="visual-check-down" onClick={handleClickOnVisualCheckDown}>
-          <i className="icon-arrow-down" />
+      <main className="content__container">
+        <div className={`content invert ${isSinglePost ? " single-post " : ""}`}>
+          {
+            !isSinglePost ? (
+              <div id="content">
+                {children}
+              </div>
+            ) : (
+              <>
+                {children}
+              </>
+            )
+          }
+          <div className="visual-check-down" onClick={handleClickOnVisualCheckDown}>
+            <i className="icon-arrow-down" />
+          </div>
         </div>
       </main>
       <div className="parallax-placeholder" ref={parallaxPlaceholder} />

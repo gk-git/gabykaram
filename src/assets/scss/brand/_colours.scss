@@ -1,20 +1,55 @@
 :root {
   --main-color: hsl(308deg 31% 35%);
+  --main-color--gradient: hsla(308, 31%, 60%, 1);
   --main-darker-color: hsl(285deg 31% 35%);
-  --secondary-color: hsl(60deg 100% 70%);
+  --secondary-color: hsl(60deg 100% 90%);
   --text-color: #fff;
+  --menu-link-color: #fff;
 
   --main-bg-color: hsl(308deg 31% 35%);
-  --secondary-bg-color: hsl(60deg 100% 70%);
+  --secondary-bg-color: hsl(60deg 100% 90%);
 
 
-  --main-bg-color--20: hsl(308deg 31% 35%/20%);
   --main-bg-color--60: hsl(308deg 31% 35%/60%);
-  --secondary-bg-color--20: hsl(60deg 100% 70%/ 20%);
-  --secondary-bg-color--40: hsl(60deg 100% 70%/ 40%);
 
-  --link-color: hsl(60deg 100% 70%);
-  --link-color-visited: hsl(60deg 100% 40%);
-  --link--hover-color: hsl(120deg 100% 90%);
+  --link-color: hsl(60deg 100% 90%);
+  --link-color-visited: #E2E251;
+  --link--hover-color: #E2E251;
   --box-shadow: 0px 0px 0.3rem rgb(148 136 195 / 70%);
+
+  --secondary-background-color2: hsl(60deg 100% 70% / 30%);
+  --container-background-color: white;
+  --header-background-color: hsl(60deg 100% 70% / 50%);
+  --main-icon-color: hsl(308deg 31% 35%);
+  --main-icon-hover-color: #E2E251;
+  --main-icon-hover-color-invert: black;
+
+  --menu-background-color: rgba(0, 0, 0, .85);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-darker-color: #3A0E34;
+
+    --container-background-color: black;
+    --secondary-background-color2: rgba(255, 255, 102, 0.9);
+    --header-background-color: hsl(60deg 100% 70% / 80%);
+    --main-bg-color: rgba(82, 14, 74, 0.8);
+    --main-color: #3A0E34;
+    --main-color--gradient: hsl(308deg 31% 50%);
+    --menu-background-color: rgba(0, 0, 0, .95);
+    --menu-link-color: #000;
+    --main-bg-color--60: hsla(308deg 61% 14% / 60%);
+
+    --secondary-bg-color: hsl(60deg 71% 60%);
+    --secondary-color: hsl(60deg 71% 60%);
+
+    --main-icon-color: #3A0E34;
+    --main-icon-hover-color: #C5C548;
+    --main-icon-hover-color-invert: white;
+
+    --link-color: hsl(60deg 100% 90%);
+    --link-color-visited: #C5C548;
+    --link--hover-color: #C5C548;
+  }
 }

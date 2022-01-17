@@ -1,6 +1,10 @@
 .pro-bono {
-  background: #042013;
-  color: #19E68A;
+  color: var(--main-color);
+  background: var(--container-background-color);
+
+  &__wrapper {
+    background: var(--secondary-background-color2);
+  }
 
   &__container {
     max-width: 867px;
@@ -26,7 +30,7 @@
         text-decoration: underline;
 
         &:hover {
-          color: var(--secondary-color);
+          color: var(--link--hover-color);
         }
       }
 
@@ -39,7 +43,7 @@
 
         &:hover {
           svg {
-            fill: var(--secondary-color);
+            fill: var(--main-icon-hover-color);
           }
         }
 
@@ -49,7 +53,7 @@
 
         svg {
           width: 2rem;
-          fill: white;
+          fill: var(--main-icon-color);
         }
       }
     }

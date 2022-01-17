@@ -4,10 +4,14 @@
 @import "typography";
 
 
-main.content {
+.content {
   padding: 2rem 1rem;
   background: var(--main-bg-color);
   color: var(--text-color);
+
+  &__container {
+    background: var(--container-background-color);
+  }
 
   &.single-post {
     padding: 0;
