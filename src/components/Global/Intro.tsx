@@ -39,7 +39,7 @@ const Intro = () => {
      <div className="intro">
        <div className="intro__content">
          <CurrentlyPlaying />
-         <p>
+         <p className="intro__wrapper">
            <span className="intro__title">{state.greet}</span>
            <span className="intro__sub-title">My name is <strong>Gaby Karam</strong></span>
          </p>
