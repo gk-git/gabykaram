@@ -58,12 +58,9 @@ const Layout = ({
   const {site: {siteMetadata: {hashDate}}} = data;
   return (
     <div className={`default-layout ${className} ${navigationProps.isOpen ? "open" : "close"}`}>
-      <Helmet
-        htmlAttributes={{
-          lang: "en"
-        }}
-      />
-      <Helmet>
+      <Helmet htmlAttributes={{
+        lang: "en"
+      }}>
         <meta charSet="utf-8" />
         <title>{seo?.title || config.defaultSeo.title}</title>
         <meta name="description" content={seo?.description || config.defaultSeo.description} />
