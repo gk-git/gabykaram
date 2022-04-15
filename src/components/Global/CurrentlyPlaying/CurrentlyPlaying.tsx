@@ -6,16 +6,21 @@ import MusicNoteIcon from "./MusicNoteIcon"
 import LiveIcon from "./atoms/LiveIcon"
 import "./CurrentlyPlaying.scss"
 
+const notPlayingState = {
+  isPlaying: false,
+  publisher: null,
+  publisherUrl: null,
+  name: null,
+  images: [],
+  external_urls: {
+    spotify: null
+  },
+  playing_type: null
+}
 export default function CurrentlyPlaying() {
   const [state, setState] = useState({
     isDocumentVisible: true,
-    isPlaying: false,
-    album: null,
-    name: null,
-    artists: [],
-    external_urls: {
-      spotify: null
-    }
+    ...notPlayingState
   })
 
   useEffect(()=>{
@@ -77,28 +82,24 @@ export default function CurrentlyPlaying() {
         .then(response => response.json())
         .then(data => {
           setState(prevState => {
-
+            const isTrack = data.playing_type === "track"
             if (data.isPlaying) {
               return {
                 ...prevState,
                 isPlaying: data.isPlaying,
-                album: data.data.album,
+                publisher: isTrack ? getArtistNames(data.data.artists) :getPodcastName( data.data.show.name,data.data.show.external_urls.spotify),
+                publisherUrl: isTrack ? data.data.album.external_urls.spotify : data.data.show.external_urls.spotify,
+                images: isTrack ? data.data.album.images : data.data.images,
                 name: data.data.name,
-                artists: data.data.artists,
                 external_urls: {
                   spotify: data.data.external_urls.spotify
-                }
+                },
+                playing_type: data.playing_type
               }
             } else {
               return {
                 ...prevState,
-                isPlaying: false,
-                album: null,
-                name: null,
-                artists: [],
-                external_urls: {
-                  spotify: null
-                }
+                ...notPlayingState
               }
             }
           })
@@ -112,14 +113,14 @@ export default function CurrentlyPlaying() {
     }
   }
 
-  const outputArtistsNames = () => {
+  const getArtistNames = (artists) => {
     const returns = []
-    const artistsCount = state.artists.length
+    const artistsCount = artists.length
     for (let index = 0; index < artistsCount; index++) {
-      const artist = state.artists[index];
+      const artist = artists[index]
       if (index !== 0 && index === artistsCount - 1) {
         returns.push((
-            <span key={`${index}-and`}>and </span>
+          <span key={`${index}-and`}>and </span>
         ))
       }
       returns.push((
@@ -133,6 +134,15 @@ export default function CurrentlyPlaying() {
     }
     return returns
   }
+
+  const getPodcastName = (podcastName, podcastUrl) => {
+    return (
+      <span>
+          <a href={podcastUrl} target="_blank"><strong>{podcastName}</strong></a>
+      </span>
+    )
+  }
+
   return (
     <div className="currently-playing">
       <div className="currently-playing__container">
@@ -166,22 +176,22 @@ export default function CurrentlyPlaying() {
                            className="spotify__close-icon icon-close">
                     </label>
                     <p className="spotify__primary-text">
-                      While working I usually listen to music.
+                      While working I usually listen to {state.playing_type === "track" ? "music" : "podcast"}.
                     </p>
                     <p className="spotify__secondary-text">
                       Now listening to <a href={state.external_urls.spotify} target="_blank"><strong
                       className="song__name">{state.name}</strong></a> by <span
-                      className="artist__name">{outputArtistsNames()}</span>
+                      className="artist__name">{state.publisher}</span>
                     </p>
                     {
-                      state.album.images.length > 0 && (
-                        <a href={state.album.external_urls.spotify} className="spotify__album-cover" target="_blank">
-                          <img title={state.album.name} alt={state.album.name}
-                               src={state.album.images.find(({height})=> height==640).url} />
+                    state.images.length > 0 && (
+                        <a href={state.publisherUrl} className="spotify__album-cover"
+                           target="_blank">
+                          <img title={state.publisher} alt={state.publisher}
+                               src={state.images.find(({ height }) => height == 640).url} />
                         </a>
                       )
                     }
-
                   </div>
                 </div>
               </>
