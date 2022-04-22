@@ -2,7 +2,7 @@
 title: "Who is Gaby Karam"
 date: 2021-09-10
 published: true
-featured: true
+featured: false
 ---
 
 
