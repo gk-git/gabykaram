@@ -14,7 +14,7 @@
   ],
   "author": "Gaby Karam",
   "scripts": {
-    "build:app": "gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
@@ -22,10 +22,7 @@
     "clean": "gatsby clean",
     "lint": "eslint . --ext ts --ext tsx'",
     "test": "npm run type-check && npm run lint",
-    "type-check": "tsc --pretty --noEmit",
-    "serve:lambda": "netlify-lambda serve lambda",
-    "build": "run-p build:**",
-    "build:lambda": "netlify-lambda build lambda"
+    "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
