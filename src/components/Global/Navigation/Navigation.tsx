@@ -31,11 +31,7 @@ const Navigation = ({ isTransparent, isOpen, closeMenu, toggleMenu }: Navigation
               <li><span>Site dishes</span></li>
               <li>
                 <Link to="/" onClick={handleCloseMenu} className="home" activeClassName="current"
-                      title="Learn about me (H)">Home</Link>
-              </li>
-              <li>
-                <Link to="/blog/" onClick={handleCloseMenu} className="blog" activeClassName="current"
-                      title="Read my blog (B)">Blog</Link>
+                      title="Learn about me (H)">Blog</Link>
               </li>
               <li>
                 <Link to="/portfolio/" onClick={handleCloseMenu} className="portfolios" activeClassName="current"
