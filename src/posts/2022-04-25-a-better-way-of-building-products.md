@@ -1,4 +1,9 @@
-# Repost: A Better Way Of Building Products
+---
+title: "Repost: A Better Way Of Building Products"
+date: 2022-04-25
+published: true
+featured: false
+---
 
 Scrum is a framework within which people can address complex adaptive problems, while productively and creatively delivering products of the highest possible value.
 

@@ -2,7 +2,7 @@
 title: "GraphQl: How Not To Repeat Queries"
 date: 2022-01-13
 published: true
-featured: true
+featured: false
 ---
 
 In this post, I am going to write about what a fragment is in GraphQL. A GraphQL fragment is a reusable part of the query. In GraphQL, you may run into situations where you need to query for the same fields in different queries. If you notice that your query has many repetitive fields in multiple areas, you can consolidate them into a reusable unit called a fragment.
