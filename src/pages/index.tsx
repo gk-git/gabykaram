@@ -80,7 +80,7 @@ export default function BlogPage ({ data }) {
       }}
     >
       {
-        data.blogPostsFeautured.nodes.length > 0 || data.blogPostsRegular.length > 0? (
+        data.blogPostsFeautured.nodes.length >= 0 || data.blogPostsRegular.length > 0? (
 
           <div>
             {[...data.blogPostsFeautured.nodes, ...data.blogPostsRegular.nodes].map(({ excerpt, frontmatter, fields }) => {
