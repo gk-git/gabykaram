@@ -62,7 +62,7 @@ const BlogSinglePostPage =  ({ data }) => {
   }, [data])
 
   const handleBackButtonClick = () => {
-    navigate('/blog')
+    navigate('/')
   }
   return (
     <LayoutContainer
