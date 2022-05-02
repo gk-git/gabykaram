@@ -16,9 +16,5 @@ Last but not least, the simplest way to support us is by using the Archive and s
 
 Thank you again for your kind support. Together, we are ensuring Universal Access To All Knowledge.
 
-With much gratitude,
-
-The Internet Archive Team
-https://archive.org
 
 For all inquiries or questions, please send an email to donations@archive.org. 
