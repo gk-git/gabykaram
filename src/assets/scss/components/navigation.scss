@@ -64,13 +64,16 @@
       top: 20px;
       right: 0;
       left: 0;
-      margin: auto;
       padding-left: 2.5%;
       padding-right: 2.5%;
       color: var(--main-color);
       z-index: 3;
 
       text-align: right;
+
+
+      margin: auto 0 auto auto;
+      width: max-content;
     }
   }
 

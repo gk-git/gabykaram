@@ -17,11 +17,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
+    "start": "npm run build && npm run serve",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint . --ext ts --ext tsx'",
-    "test": "npm run type-check && npm run lint",
+    "test": "npm run clean && npm run type-check && npm run lint",
     "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {

@@ -2,6 +2,8 @@ import { Link } from "gatsby"
 import React from "react"
 import { NavigationProps } from "../../../types/components"
 
+import WebRingNavigation from "../WebRingNavigation"
+
 const Navigation = ({ isTransparent, isOpen, closeMenu, toggleMenu }: NavigationProps) => {
   const handleMenuClick = (event) => {
     event.preventDefault()
@@ -14,6 +16,7 @@ const Navigation = ({ isTransparent, isOpen, closeMenu, toggleMenu }: Navigation
   return (
     <nav id="main-navigation" className={`main-navigation ${isOpen ? "expanded" : ""} `} role="navigation"
     >
+      <WebRingNavigation/>
       <div className="main-navigation__handle__wrapper">
         <button onClick={handleMenuClick}
                 className={`main-navigation__handle ${isTransparent ? "transparent" : ""}`} title="Menu (Esc)"
