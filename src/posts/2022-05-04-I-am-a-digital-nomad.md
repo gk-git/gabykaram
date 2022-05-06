@@ -1,8 +1,8 @@
 ---
 title: I am a digital nomad"
-date: 2022-05-01
+date: 2022-05-04
 published: true
-featured: true
+featured: false
 ---
 
 
