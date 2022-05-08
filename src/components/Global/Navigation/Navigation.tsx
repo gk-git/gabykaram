@@ -16,7 +16,10 @@ const Navigation = ({ isTransparent, isOpen, closeMenu, toggleMenu }: Navigation
   return (
     <nav id="main-navigation" className={`main-navigation ${isOpen ? "expanded" : ""} `} role="navigation"
     >
-      <WebRingNavigation/>
+      {
+        !isOpen &&  <WebRingNavigation/>
+      }
+
       <div className="main-navigation__handle__wrapper">
         <button onClick={handleMenuClick}
                 className={`main-navigation__handle ${isTransparent ? "transparent" : ""}`} title="Menu (Esc)"
