@@ -7,7 +7,7 @@ featured: false
 
 # Happy Birthday WordPress
 
-Today WordPress is 19 years old :sweat_smile:, if you are interested in WordPress following the founder of WordPress and CEO of automatic <Matt Mullenweg> would help you to decide what to drop while using WordPress and what not to drop.
+Today WordPress is 19 years old :sweat_smile:, if you are interested in WordPress following the founder of WordPress and CEO of automatic **Matt Mullenweg** would help you to decide what to drop while using WordPress and what not to drop.
 
 Around 2018, exactly when Gutenberg was launched, a part of the community have created another one time clone of WordPress called [ClassicPress](https://www.classicpress.net/). Back than Matt had a vision that websites gonna be 360 degree(Virtual Reality aka Meta Verse) and the classic press peeps wanted a WP admin without Gutenberg.
 
