@@ -28,6 +28,7 @@ LayoutContainer.defaultProps = {
   showIntro: false,
   introComponent: null,
   isSinglePost: false,
+  enableVisualCheckDown: true,
   className: "",
   seo: null
 }

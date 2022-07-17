@@ -1,14 +1,15 @@
 
 export interface  LayoutProps {
+  showIntro?: boolean,
+  introComponent?: any,
+  children?: any,
+  isSinglePost?: boolean,
+  className?: string,
+  enableVisualCheckDown?: boolean,
   navigationProps?: {
     isTransparent?: boolean,
     isOpen?: boolean
   },
-  showIntro?:boolean,
-  introComponent?: any,
-  children?: any,
-  isSinglePost?:boolean,
-  className?: string,
   seo?: {
     title?: string,
     description?: string,

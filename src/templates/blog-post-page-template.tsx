@@ -70,6 +70,7 @@ const BlogSinglePostPage =  ({ data }) => {
       introComponent={<Intro />}
       className={"blog-post"}
       isSinglePost={true}
+      enableVisualCheckDown={false}
       seo={{
         title:`${frontmatter.title} | Gaby Karam`,
         description: excerpt
